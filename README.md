@@ -21,6 +21,9 @@ Clock and nRst omitted from input lists.
 - oscillator.sv                  : Oscillator module.
   - Inputs: enable, [15:0] divider
   - Outputs: [15:0] count
+- sample_rate_clock_divider.sv   : Sample Rate Clock Divider module.
+  - Inputs: enable
+  - Outputs: flag
 - sequential_divider.sv          : Sequential Divider module.
   - Inputs: enable, [15:0] divider, [15:0] count, flag
   - Outputs: [7:0] quotient
