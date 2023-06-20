@@ -11,14 +11,31 @@
 Description of functionality, how to use it, and any supporting equipment required
 
 ## Base Source Files
-- flex_counter.sv                : Counter Module code here.
-- freq_divider.sv                : Frequency Divider Module code here.
-- keypad_encoder.sv              : Priority Encoder and Edge Detector Module code here.
-- oscillator.sv                  : Oscillator Wrapper code here.
-- pwm.sv                         : PWM Coversion Module code here.
-- sample_rate_wrapper.sv         : Sample Rate Counter Wrapper code here.
-- synth_fsm.sv                   : Controller FSM code here.
-- waveshaper.sv                  : Waveshaper Module code here.
+Clock and nRst omitted from input lists.
+- keypad_encoder.sv              : Synchronizer, Priority Encoder and Edge Detector Module code here.
+  - Inputs: [14:0] keypad_i
+  - Outputs: [3:0] keypad_enc, modekey_edge, soundgen_edge
+- freq_gen.sv                : Frequency Generator Look-Up Table module.
+  - Inputs: enable, [3:0] keypad_enc
+  - Outputs: [15:0] divider
+- oscillator.sv                  : Oscillator module.
+  - Inputs: enable, [15:0] divider
+  - Outputs: [15:0] count
+- sequential_divider.sv          : Sequential Divider module.
+  - Inputs: enable, [15:0] divider, [15:0] count, flag
+  - Outputs: [7:0] quotient
+- waveshaper.sv                  : Waveshaper module.
+  - Inputs: [7:0] quotient, flag
+  - Outputs: [7:0] sample
+- pwm.sv                         : PWM Conversion module.
+  - Inputs: enable, [7:0] sample
+  - Outputs: pwm_o
+- mode_fsm.sv                    : Wave Mode Controller FSM module.
+  - Inputs: modekey_edge
+  - Outputs: [1:0] mode
+- soundgen_fsm.sv                : Soundgen Controller FSM module.
+  - Inputs: soundgen_edge
+  - Outputs: [3:0] soundgen_note
 
 ## Testbenching
 - tb_.sv : This is the test bench used to test your design.
