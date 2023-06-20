@@ -1,11 +1,11 @@
 # STARS 2023 Design Final Project
 
-## [Team Name]
-* [Name]
-* [Name]
-* [Name]
-* [Name]
-* [TA]
+## Synthsugeons
+* Bailey
+* Jackson
+* Jahsiah
+* Julia
+* Aidan
 
 ## [Project Name]
 Description of functionality, how to use it, and any supporting equipment required
