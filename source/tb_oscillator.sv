@@ -13,7 +13,7 @@ module tb_oscillator ();
 
   // Inactive Inputs and Reset Output Values
   localparam  INACTIVE_D_VALUE = 1'b0;
-  localparam  RESET_OUTPUT_VALUE = 8'b0;
+  localparam  RESET_COUNT_VALUE = 16'b1;
 
   // Declare Test Case Signals
   integer tb_test_case_num;
@@ -91,7 +91,7 @@ module tb_oscillator ();
     #(CLK_PERIOD * 3);
 
     // Set name and number
-    tb_test_num  = tb_test_num + 1;
+    tb_test_case_num  = tb_test_case_num + 1;
     tb_test_case_name = test_case_name;
 
     // Reset and deactivate DUT
@@ -111,8 +111,7 @@ module tb_oscillator ();
     end
     else begin // Check failed
       tb_mismatch = 1'b1;
-      $error("Incorrect output %s during %s test case.
-              Expected %h, got %h.", check_tag, tb_test_case_name, tb_expected_count, tb_count);
+      $error("Incorrect output %s during %s test case. \nExpected %h, got %h.", check_tag, tb_test_case_name, tb_expected_count, tb_count);
     end
 
     // Wait some small amount of time so check pulse timing is visible on waves
@@ -153,8 +152,8 @@ module tb_oscillator ();
     // ************************************************************************
     // Test Case 1: Power-on Reset of the DUT
     // ************************************************************************
-    tb_test_num  = tb_test_num + 1;
-    tb_test_case = "Power on Reset";
+    tb_test_case_num  = tb_test_case_num + 1;
+    tb_test_case_name = "Power on Reset";
     // Note: Do not use reset task during reset test case since we need to specifically check behavior during reset
     // Wait some time before applying test case stimulus
     #(0.1);
@@ -166,7 +165,7 @@ module tb_oscillator ();
     #(CLK_PERIOD * 0.5);
 
     // Check that internal state was correctly reset
-    tb_expected_output = RESET_OUTPUT_VALUE;
+    tb_expected_count = RESET_COUNT_VALUE;
     check_output("after reset applied");
 
     // Check that the reset value is maintained during a clock cycle
