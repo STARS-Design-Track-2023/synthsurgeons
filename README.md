@@ -1,11 +1,11 @@
 # STARS 2023 Design Final Project
 
 ## Synthsugeons
-* Bailey
-* Jackson
-* Jahsiah
-* Julia
-* Aidan
+* Bailey Vincer
+* Jackson Liner
+* Jahsiah Castillo
+* Julia Scott
+* (TA) Aidan Prendergast
 
 ## [Project Name]
 Description of functionality, how to use it, and any supporting equipment required

@@ -10,6 +10,7 @@ always_ff @ (posedge clk, negedge nrst) begin
 end
 
 always_comb begin : freq_gen
+
 if (count>=divider) begin
     next_count= 16'd1; end
 else begin
