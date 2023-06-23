@@ -6,7 +6,15 @@ module pwm (
     output logic pwm_o
 );
 logic [7:0] count, next_count;
-
+logic pwm;
+always_ff @ (posedge clk, negedge n_rst) begin
+  if(1'b0 == n_rst) begin
+    pwm_o <= 0;
+  end
+  else begin
+    pwm_o <= pwm;
+  end
+end
 always_comb begin
 
     if(count >= 255) begin
@@ -17,11 +25,11 @@ always_comb begin
     end
 
     if (count < sample) begin
-        pwm_o = 1;
+        pwm = 1;
     end
     else begin
-        pwm_o = 0;
+        pwm = 0;
     end
-    
+
 end
 endmodule
