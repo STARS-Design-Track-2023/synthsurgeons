@@ -1,7 +1,9 @@
-module sound_series(
+module keypad_encoder(
 input logic [14:0] pb,
 input logic [12:0] keys,
-output logic [3:0] out
+output logic [3:0] out,
+output logic mode_edge,
+output logic sound_edge
 );
 always_comb begin
 casez (keys)
@@ -21,6 +23,5 @@ casez (keys)
     default: out = 4'b1111; //No valid output
 endcase    
 end
-
 
 endmodule
