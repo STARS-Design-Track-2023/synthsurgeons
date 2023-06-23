@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-module tb_base ();
+module tb_oscillator ();
 
   // 10MHz Clock Rate
   localparam CLK_PERIOD        = 100;
@@ -13,7 +13,7 @@ module tb_base ();
 
   // Inactive Inputs and Reset Output Values
   localparam  INACTIVE_D_VALUE = 1'b0;
-  localparam  RESET_OUTPUT_VALUE = 8'b0;
+  localparam  RESET_COUNT_VALUE = 16'b1;
 
   // Declare Test Case Signals
   integer tb_test_case_num;
@@ -23,12 +23,14 @@ module tb_base ();
   logic   tb_check;
 
   // Declare DUT Connection Signals
-  logic   tb_clk;
-  logic   tb_nrst;
-  logic   tb_D;
+  logic tb_clk;
+  logic tb_nrst;
+  logic tb_en;
+  logic [15:0] tb_divider;
+  logic [15:0] tb_count;
 
   // Declare the Test Bench Signals for Expected Results
-  logic tb_expected_output;
+  logic [15:0] tb_expected_count;
 
   // Clock generation block
   always begin
@@ -76,7 +78,8 @@ module tb_base ();
   // Set input signals to zero before starting with new testcases
   task deactivate_signals;
   begin
-    tb_D = INACTIVE_D_VALUE;
+    tb_divider = 16'd1;
+    tb_en = 1'b0;
   end
   endtask
 
@@ -103,12 +106,12 @@ module tb_base ();
   begin
     tb_mismatch = 1'b0;
     tb_check    = 1'b1;
-    if(tb_expected_output == tb_D) begin // Check passed
+    if(tb_expected_count == tb_count) begin // Check passed
       $display("Correct output %s during %s test case.", check_tag, tb_test_case_name);
     end
     else begin // Check failed
       tb_mismatch = 1'b1;
-      $error("Incorrect output %s during %s test case. \nExpected %h, got %h.", check_tag, tb_test_case_name, tb_expected_output, tb_D);
+      $error("Incorrect output %s during %s test case. \nExpected %h, got %h.", check_tag, tb_test_case_name, tb_expected_count, tb_count);
     end
 
     // Wait some small amount of time so check pulse timing is visible on waves
@@ -118,11 +121,13 @@ module tb_base ();
   endtask
 
   // DUT Portmap
-  module_name DUT 
+  oscillator DUT 
   (
     .clk(tb_clk), 
     .nrst(tb_nrst), 
-    .D(tb_D)
+    .en(tb_en),
+    .divider(tb_divider),
+    .count(tb_count)
   );
 
   // Signal Dump
@@ -136,6 +141,10 @@ module tb_base ();
     // Initialize all of the test inputs and test environment
     deactivate_signals();
     start_dut();
+
+    // Initialize module-task-specific test cases
+    // tb_stream_check_tag = "N/A";
+    // tb_bit_num          = -1;   // Initialize to invalid number
     
     // Wait some time before starting first test case
     #(0.1);
@@ -156,7 +165,7 @@ module tb_base ();
     #(CLK_PERIOD * 0.5);
 
     // Check that internal state was correctly reset
-    tb_expected_output = RESET_OUTPUT_VALUE;
+    tb_expected_count = RESET_COUNT_VALUE;
     check_output("after reset applied");
 
     // Check that the reset value is maintained during a clock cycle
@@ -172,18 +181,52 @@ module tb_base ();
     check_output("after reset was released");
 
     // ************************************************************************
-    // Test Case 2: Example Test Case
+    // Test Case 2: A4 Divider
     // ************************************************************************
     // Start Testcase, Task finishes at Negedge
-    start_testcase("Example Test Case");
+    start_testcase("A4 Divider");
 
-    // Check 1
-    tb_expected_output = 1;
-    check_output("at check 1");
+    // Apply Stimulus
+    tb_divider = 16'd22727;
+    tb_en = 1'b1;
 
-    // Check 2
+    // Count by 1
     #(CLK_PERIOD);
-    check_output("at check 2");
+    tb_expected_count = 16'd2;
+    check_output("after 1 cycle");
+
+    // Visual inspection of clock rollover
+    #(CLK_PERIOD * 22725);
+    tb_expected_count = 16'd22727;
+    check_output("after 22726 cycles");
+
+    #(CLK_PERIOD);
+    tb_expected_count = 16'd1;
+    check_output("after rollover");
+
+    // ************************************************************************
+    // Test Case 2: Arbitrary Divider
+    // ************************************************************************
+    // Start Testcase, Task finishes at Negedge
+    start_testcase("Arbitrary Divider");
+
+    // Apply Stimulus
+    tb_divider = 16'd30000;
+    tb_en = 1'b1;
+
+    // Count by 1
+    #(CLK_PERIOD);
+    tb_expected_count = 16'd2;
+    check_output("after 1 cycle");
+
+    // Visual inspection of clock rollover
+    #(CLK_PERIOD * 29998);
+    tb_expected_count = 16'd30000;
+    check_output("after 29999 cycles");
+
+    #(CLK_PERIOD);
+    tb_expected_count = 16'd1;
+    check_output("after rollover");
 
     $display("Simulation complete");
     $stop;
