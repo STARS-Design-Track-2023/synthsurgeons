@@ -1,4 +1,4 @@
-module LUTS (input logic [3:0] keycode, sound_series, input logic is_FPGA, en, output logic [15:0] divider);
+module frequency_divider (input logic [3:0] keycode, sound_series, input logic is_FPGA, en, output logic [15:0] divider);
 always_comb begin : LUTS 
 logic [12:0] [15:0] LUT_10MHz= {
     16'd19111,   // C (high)
