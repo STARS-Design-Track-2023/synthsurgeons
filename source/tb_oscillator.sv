@@ -30,7 +30,7 @@ module tb_oscillator ();
   logic [15:0] tb_count;
 
   // Declare the Test Bench Signals for Expected Results
-  logic tb_expected_count;
+  logic [15:0] tb_expected_count;
 
   // Clock generation block
   always begin
