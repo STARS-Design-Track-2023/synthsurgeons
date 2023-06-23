@@ -1,4 +1,4 @@
-module freq_gen (input logic clk,nrst, en, input logic [15:0] divider, output logic [15:0] count);
+module oscillator (input logic clk,nrst, en, input logic [15:0] divider, output logic [15:0] count);
 
 logic [15:0] next_count;
 

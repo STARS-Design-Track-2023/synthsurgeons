@@ -1,0 +1,29 @@
+** VVP Stop(0) **
+** Flushing output streams.
+** Current simulation time is 0 ticks.
+** Continue **
+VCD info: dumpfile dump.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+Correct output after reset applied during Power on Reset test case.
+Correct output after clock cycle while in reset during Power on Reset test case.
+Correct output after reset was released during Power on Reset test case.
+ERROR: source/tb_oscillator.sv:114: Incorrect output after 1 cycle during A4 Divider test case. 
+Expected 0, got 0002.
+       Time: 100000  Scope: tb_oscillator.check_output
+ERROR: source/tb_oscillator.sv:114: Incorrect output after 22726 cycles during A4 Divider test case. 
+Expected 1, got 58c7.
+       Time: 227350010  Scope: tb_oscillator.check_output
+Correct output after rollover during A4 Divider test case.
+ERROR: source/tb_oscillator.sv:114: Incorrect output after 1 cycle during Arbitrary Divider test case. 
+Expected 0, got 0002.
+       Time: 227440000  Scope: tb_oscillator.check_output
+ERROR: source/tb_oscillator.sv:114: Incorrect output after 29999 cycles during Arbitrary Divider test case. 
+Expected 0, got 7530.
+       Time: 527420010  Scope: tb_oscillator.check_output
+Correct output after rollover during Arbitrary Divider test case.
+Simulation complete
+source/tb_oscillator.sv:232: $stop called at 527430030 (10ps)
+** VVP Stop(0) **
+** Flushing output streams.
+** Current simulation time is 527430030 ticks.
+** Continue **
