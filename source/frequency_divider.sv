@@ -1,4 +1,4 @@
-module LUTS (input logic [3:0] keycode, sound_series, input logic is_FPGA, output logic [15:0] divider);
+module LUTS (input logic [3:0] keycode, sound_series, input logic is_FPGA, en, output logic [15:0] divider);
 always_comb begin : LUTS 
 logic [12:0] [15:0] LUT_10MHz= {
     16'd19111,   // C (high)
@@ -31,7 +31,7 @@ logic [12:0] [15:0] LUT_12MHz={
     16'd43292,   // C#
     16'd45868   // C (low)
 };
-
+if (en==1) begin
 if ((|keycode) && (!|sound_series)) begin
     if ((keycode == 4'b1101 || keycode == 4'b1110 || keycode == 4'b1111)) begin
         divider= 16'd0; end
@@ -55,5 +55,7 @@ end
 else begin
     divider= 16'd0; end
 end
-
+else begin
+    divider=16'd0; end
+end
 endmodule
