@@ -16,6 +16,28 @@ module top
   input  logic txready, rxready
 );
 
-frequency_divider U1 (.keycode(pb[3:0]),.is_FPGA(pb[19]),.sound_series(pb[15:12]), .en(pb[18]), .divider({left,right}));
+endmodule
+
+module synth_top (input logic [14:0] keypad_i, input logic clk, nrst, output logic pwm_o);
+
+/* insert keypad encoder port line*/
+
+logic [3:0] keycode, sound_series;
+logic mode_key, signal;
+
+frequency_divider freq_div2 (.keycode(pb[3:0]),.is_FPGA(pb[19]),.sound_series(pb[15:12]), .en(pb[18]), .divider({left,right}));
+
+logic [15:0] divider;
+
+oscillator osc3 (.clk,.nrst, .en(pb[18]));
+
+logic [15:0] count;
+
+/* insert sequential divider port line*/
+
+logic [15:0] dividend;
+logic sample_now, new_q, done, current_q, q_out;
+
+
 
 endmodule
