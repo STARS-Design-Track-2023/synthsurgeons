@@ -1,19 +1,22 @@
-module freq_gen (input logic clk,nrst, input logic [15:0] divider, output logic [15:0] count);
+module oscillator (input logic clk,nrst, en, input logic [15:0] divider, output logic [15:0] count);
 
 logic [15:0] next_count;
 
-always_ff @ (posedge clk, negedge nrst) begin
-    if (nrst==0) begin
-        next_count<=16'b1; end
+always_ff @ (posedge clk, negedge nrst) begin 
+if (nrst==0) begin
+        count<=16'b1; end
     else begin
-        next_count<=count; end
+        count<=next_count; end
 end
 
 always_comb begin : freq_gen
-
-if (count>=divider) begin
-    next_count= 16'd1; end
-else begin
-    next_count= count+1; end
+    if (en==1) begin
+        if (count>=divider) begin
+        next_count= 16'd1; end
+        else begin
+        next_count= count+1; end
+    end
+    else begin
+        next_count=16'd1; end
 end
 endmodule
