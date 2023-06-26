@@ -15,6 +15,7 @@ module top
   output logic txclk, rxclk,
   input  logic txready, rxready
 );
+
 sound_series_fsm u1(.sound_edge(pb[6]), .clkdiv(pb[4]), .n_rst(~pb[0]), .clk(pb[5]), .note_out(right[3:0]));
 
 endmodule

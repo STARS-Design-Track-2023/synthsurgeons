@@ -1,1 +1,9 @@
 source/top.sv
+dump.vcd
+ice40.log
+xt
+sim_build/
+ice40/build
+ice40.log
+ice40.log
+source/top.sv
