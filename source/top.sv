@@ -3,7 +3,7 @@
 module top 
 (
   // I/O ports
-  input  logic hz12M, reset,
+  input  logic hz12M, hz8, reset,
   input  logic [20:0] pb,
   output logic [7:0] left, right,
          ss7, ss6, ss5, ss4, ss3, ss2, ss1, ss0,
@@ -15,6 +15,74 @@ module top
   output logic txclk, rxclk,
   input  logic txready, rxready
 );
+sound_series_fsm u1(.sound_edge(pb[6]), .clkdiv(pb[4]), .n_rst(~pb[0]), .clk(pb[5]), .note_out(right[3:0]));
 
+endmodule
+
+module sound_series_fsm(
+input logic sound_edge, clkdiv, n_rst, clk,
+output logic [3:0] note_out
+);
+
+typedef enum logic [3:0] {base,n1,n2,n3,n4,n5,n6,n7,n8} state_note;
+typedef enum logic {off,sound1} state_sound;
+
+logic [3:0] note, next_note;
+logic sound, next_sound, s1_on;
+
+always_comb begin
+
+case(sound)
+off: next_sound = sound_edge ? sound1:off;
+sound1: next_sound = sound_edge ? off:sound1;
+default next_sound = 0;
+endcase
+
+if(sound == sound1)
+    s1_on = 1;
+else
+    s1_on = 0;
+
+case(note)
+base: next_note = s1_on ? base:n1;
+n1: next_note = clkdiv ? n2:n1;
+n2: next_note = clkdiv ? n3:n2;
+n3: next_note = clkdiv ? n4:n3;
+n4: next_note = clkdiv ? n5:n4;
+n5: next_note = clkdiv ? n6:n5;
+n6: next_note = clkdiv ? n7:n6;
+n7: next_note = clkdiv ? n8:n7;
+n8: next_note = clkdiv ? base:n8;
+default next_note = 0;
+endcase
+
+case(note)
+base: note_out = 4'b1111; //invalid
+n1: note_out = 4'b0000; //C(low)
+n2: note_out = 4'b0010; //D
+n3: note_out = 4'b0100; //E
+n4: note_out = 4'b0101; //F
+n5: note_out = 4'b0111; //G
+n6: note_out = 4'b1001; //A
+n7: note_out = 4'b1011; //B
+n8: note_out = 4'b1100; //C(high)
+default note_out = 0;
+endcase
+
+end
+
+always_ff @ (posedge clk, negedge n_rst) begin
+if (n_rst == 1'b0)
+  note <= base;
+else
+  note <= next_note;
+end
+
+always_ff @ (posedge clk, negedge n_rst) begin
+if (n_rst == 1'b0)
+  sound <= off;
+else
+  sound <= next_sound;
+end
 
 endmodule
