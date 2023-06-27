@@ -24,7 +24,7 @@ module synth_top (input logic en, input logic [14:0] keypad_i, input logic clk, 
 
 logic [3:0] keycode;
 logic mode_key, sound_edge;
-/* insert keypad encoder*/
+keypad_encoder kp_encoder (.clk(clk), .n_rst(n_rst), .pb(keypad_i), .keycode(keycode), .mode_edge(mode_key), .sound_edge(sound_edge));
 
 
 logic [3:0] sound_series;
@@ -43,7 +43,7 @@ clock_div clk_div (.clk(clk), .n_rst(n_rst), .flag(sample_now), .en(en));
 
 
 logic quotient;
-sequential_div seq_div (.clk(clk), .n_rst(n_rst), .flag(sample_now), .q_out(quotient));
+sequential_div seq_div (.clk(clk), .n_rst(n_rst), .count(count),.flag(sample_now), .q_out(quotient), .divider(divider));
 
 
 logic [1:0] wave_select;
@@ -54,6 +54,6 @@ logic [7:0] sample;
 waveshaper waveshaper (.mode(wave_select), .quotient(quotient), .sample(sample));
 
 
-pwm pwm (.clk(clk), .n_rst(n_rst), .sample(sample), .pwm_o(pwm_o));
+pwm pwm (.clk(clk), .n_rst(n_rst), .sample(sample), .pwm_o(pwm_o), .en(en));
 
 endmodule 
