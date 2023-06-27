@@ -43,7 +43,7 @@ clock_div clk_div (.clk(clk), .n_rst(n_rst), .flag(sample_now), .en(en));
 
 
 logic quotient;
-sequential_div seq_div (.clk(clk), .n_rst(n_rst), .count(count),.flag(sample_now), .q_out(quotient), .divider(divider));
+sequential_div seq_div (.clk(clk), .n_rst(n_rst), .count(count),.flag(sample_now), .q_out(quotient), .divider(divider), .en(en));
 
 
 logic [1:0] wave_select;
