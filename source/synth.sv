@@ -27,23 +27,34 @@ logic mode_key, signal;
 
 mode_fsm  mode_fsm (.clk, .n_rst);
 
+logic modekey_edge; 
 logic [1:0] mode, next_mode;
 
 frequency_divider freq_div (.keycode(pb[3:0]),.is_FPGA(pb[19]),.sound_series(pb[15:12]), .en(pb[18]), .divider({left,right}));
 
 logic [15:0] divider;
 
+/* insert sound series FSM port line*/
+/* insert variables related to sound series*/
 oscillator osc (.clk,.nrst, .en(pb[18]));
 
 logic [15:0] count;
 
-/* insert sequential divider port line*/
+sequential_div seq_div (.clk, .nrst);
 
-logic [15:0] dividend;
-logic sample_now, new_q, done, current_q, q_out;
+logic [2:0] next_count,count_div;
+logic div, done, load;
+logic [23: 0] R, next_r;
+logic [7:0] Q, next_q, next_q_out;
+logic [15:0] D, next_d, D_count, dividend;
 
-waveshaper waveshaper
+waveshaper waveshaper (/* idk what to put for  this port line, no clock or reset*/)
 
+logic [1:0] mode,
+logic [7:0] sample, quiotient;
 
+pwm pwm (.clk, .n_rst, /*pwm_o...is this variable supposed to be assigned to something on the FPGA board?*/)
+
+logic [7:0] sample;
 
 endmodule
