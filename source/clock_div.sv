@@ -1,5 +1,5 @@
 
-module clock_div(input logic clk, nrst, en, output logic flag);
+module clock_div(input logic clk, n_rst, en, output logic flag);
 
 logic [7:0] next_count;
 logic [7:0] count;
@@ -7,8 +7,8 @@ logic [7:0] max;
 
 assign max = 8'b11111111;
 
-always_ff @ (posedge clk, negedge nrst) begin 
-if (nrst == 0) begin
+always_ff @ (posedge clk, negedge n_rst) begin 
+if (n_rst == 0) begin
         count <= 8'b0; end
     else begin
         count <= next_count; end
