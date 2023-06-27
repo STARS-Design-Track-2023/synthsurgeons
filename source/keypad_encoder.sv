@@ -58,7 +58,7 @@ if (n_rst == 1'b0) begin
         last_sk <= 0;
     end
     else begin
-        last_mk <= sync_out[14];
+        last_sk <= sync_out[14];
     end  
 end
 
