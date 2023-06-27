@@ -202,7 +202,7 @@ module tb_sequential_div ();
     check_output("after division #1 finishes");
 
     // Pulse tb_en
-    tb_dividend = 22000;
+    tb_dividend = 22256;
     tb_en = 1;
     #(CLK_PERIOD);
     tb_en = 0;
