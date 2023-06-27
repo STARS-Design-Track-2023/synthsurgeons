@@ -127,7 +127,7 @@ module tb_sequential_div ();
   sequential_div DUT 
   (
     .clk(tb_clk), 
-    .nrst(tb_nrst), 
+    .n_rst(tb_nrst), 
     .flag(tb_en),
     .divider(tb_divider),
     .count(tb_dividend),
