@@ -18,7 +18,7 @@ always_ff @ (posedge clk, negedge nrst) begin
 end
 
 always_comb begin : FSM_ITER
-    if(state == Divide) beginhz12M
+    if(state == Divide) begin
     next_count = count_div + 1;
     end
     else begin
@@ -53,7 +53,7 @@ always_ff @(posedge clk, negedge nrst) begin
     end
 end
 
-//Count input blocks
+//Count input and output blocks
 
 always_comb begin
     if(flag) begin
