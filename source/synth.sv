@@ -16,51 +16,44 @@ module top
   input  logic txready, rxready
 );
 
-synth_top U1 (.keys(pb[12:0]), .modekey(pb[14]), .sound_edge(pb[15]), .en(pb[18]), .is_FPGA(pb[19]), .clk, .n_rst); 
+synth_top U1 (.keypad_i(pb[14:0]), .en(pb[18]), .clk(hz12M), .n_rst(pb[19]), .pwm_o()); 
 
 endmodule
 
-module synth_top (input logic [14:0] keypad_i, input logic clk, n_rst, output logic pwm_o);
+module synth_top (input logic en, input logic [14:0] keypad_i, input logic clk, n_rst, output logic pwm_o);
 
-keypad_encoder keypad_encoder (.keys(pb[12:0]), .modekey(pb[14]), .sound_edge(pb[15]), .clk, .n_rst);
-logic [12:0] keys;
-logic [3:0] out, keycode, sound_series;
-logic mode_edge,sound_edge;
+logic [3:0] keycode;
+logic mode_key, sound_edge;
+/* insert keypad encoder*/
 
-mode_fsm  mode_fsm (.clk, .n_rst);
 
-logic modekey_edge; 
-logic [1:0] mode, next_mode;
+logic [3:0] sound_series;
+sound_series_fsm SS_FSM (.clk(clk), .n_rst(n_rst), .sound_edge(sound_edge),.note_out(sound_series));
 
-frequency_divider freq_div (.is_FPGA(pb[19]),.en(pb[18]));
 
 logic [15:0] divider;
-
-sound_series_fsm sound_series_fsm (.n_rst, .clk);
-
-logic [3:0] note_out
-
-oscillator osc (.clk,.n_rst, .en(pb[18]));
+frequency_divider frqdiv (.keycode(keycode),.sound_series(sound_series),.divider(divider), .is_FPGA(1'b0), .en(en));
 
 logic [15:0] count;
+oscillator osc (.clk(clk), .n_rst(n_rst),.divider(divider),.count(count), .en(en));
 
 
-clock_div clock_div (.clk, .n_rst, .en(pb[18]));
+logic sample_now;
+clock_div clk_div (.clk(clk), .n_rst(n_rst), .flag(sample_now), .en(en));
 
-logic flag;
 
-sequential_div seq_div (.clk, .n_rst);
+logic quotient;
+sequential_div seq_div (.clk(clk), .n_rst(n_rst), .flag(sample_now), .q_out(quotient));
 
-logic [2:0] next_count,count_div;
-logic div, done, load;
-logic [23: 0] R, next_r;
-logic [7:0] Q, next_q, next_q_out;
-logic [15:0] D, next_d, D_count, dividend;
 
-waveshaper waveshaper (/* idk what to put for  this port line, no clock or reset*/)
+logic [1:0] wave_select;
+mode_fsm mode_FSM (.clk(clk), .n_rst(n_rst), .modekey_edge(mode_key), .mode(wave_select));
 
-logic [7:0] sample, quiotient;
 
-pwm pwm (.clk, .n_rst, /*pwm_o...is this variable supposed to be assigned to something on the FPGA board?*/)
+logic [7:0] sample;
+waveshaper waveshaper (.mode(wave_select), .quotient(quotient), .sample(sample));
 
-endmodule
+
+pwm pwm (.clk(clk), .n_rst(n_rst), .sample(sample), .pwm_o(pwm_o));
+
+endmodule 
