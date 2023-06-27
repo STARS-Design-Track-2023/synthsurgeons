@@ -1,5 +1,5 @@
 
-module sequential_div(input logic clk, nrst, flag, input logic [15:0] count, input logic [15:0] divider, output logic [7:0] q_out );
+module sequential_div(input logic clk, n_rst, flag, input logic [15:0] count, input logic [15:0] divider, output logic [7:0] q_out );
 
 logic [2:0] next_count;
 logic [2:0] count_div;
@@ -10,15 +10,15 @@ logic [15:0] D, next_d, D_count, dividend;
 
 //Iterations of divider
 
-always_ff @ (posedge clk, negedge nrst) begin 
-    if (nrst == 0) begin
+always_ff @ (posedge clk, negedge n_rst) begin 
+    if (n_rst == 0) begin
         count_div <= 3'b0; end
     else begin
         count_div <= next_count; end
 end
 
 always_comb begin : FSM_ITER
-    if(state == Divide) beginhz12M
+    if(state == Divide) begin
     next_count = count_div + 1;
     end
     else begin
@@ -44,8 +44,8 @@ always_comb begin : NEXT_STATE_LOGIC
     load = (state == Load);
 end
 
-always_ff @(posedge clk, negedge nrst) begin
-    if(~nrst) begin
+always_ff @(posedge clk, negedge n_rst) begin
+    if(~n_rst) begin
        state <= Start; 
     end
     else begin
@@ -53,7 +53,7 @@ always_ff @(posedge clk, negedge nrst) begin
     end
 end
 
-//Count input blocks
+//Count input and output blocks
 
 always_comb begin
     if(flag) begin
@@ -73,8 +73,8 @@ always_comb begin
     end
 end 
 
-always_ff @(posedge clk, negedge nrst) begin
-    if(~nrst) begin
+always_ff @(posedge clk, negedge n_rst) begin
+    if(~n_rst) begin
        dividend <= 16'b0; 
        q_out <= 0;
     end
@@ -96,7 +96,7 @@ always_comb begin
         next_d = divider;    
     end
     if(div) begin
-        if(R[23:8] >= D) begin
+        if(R[22:7] >= D) begin
             next_r = {R << 1} - {D, 8'b0};
             next_q = {Q[6:0], 1'b1};
         end
@@ -107,8 +107,8 @@ always_comb begin
     end
 end
 
-always_ff @(posedge clk, negedge nrst) begin
-    if(~nrst) begin
+always_ff @(posedge clk, negedge n_rst) begin
+    if(~n_rst) begin
         R <= 0;
         Q <= 0;
         D <= 0;
