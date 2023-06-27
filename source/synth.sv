@@ -25,11 +25,15 @@ module synth_top (input logic [14:0] keypad_i, input logic clk, nrst, output log
 logic [3:0] keycode, sound_series;
 logic mode_key, signal;
 
-frequency_divider freq_div2 (.keycode(pb[3:0]),.is_FPGA(pb[19]),.sound_series(pb[15:12]), .en(pb[18]), .divider({left,right}));
+mode_fsm  mode_fsm (.clk, .n_rst);
+
+logic [1:0] mode, next_mode;
+
+frequency_divider freq_div (.keycode(pb[3:0]),.is_FPGA(pb[19]),.sound_series(pb[15:12]), .en(pb[18]), .divider({left,right}));
 
 logic [15:0] divider;
 
-oscillator osc3 (.clk,.nrst, .en(pb[18]));
+oscillator osc (.clk,.nrst, .en(pb[18]));
 
 logic [15:0] count;
 
@@ -37,6 +41,8 @@ logic [15:0] count;
 
 logic [15:0] dividend;
 logic sample_now, new_q, done, current_q, q_out;
+
+waveshaper waveshaper
 
 
 
