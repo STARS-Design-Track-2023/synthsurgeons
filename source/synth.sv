@@ -16,7 +16,7 @@ module top
   input  logic txready, rxready
 );
 
-synth_top U1 (.keypad_i(pb[14:0]), .en(pb[18]), .clk(hz12M), .n_rst(pb[19]), .pwm_o()); 
+synth_top U1 (.keypad_i(pb[14:0]), .en(pb[18]), .clk(hz12M), .n_rst(pb[19]), .pwm_o(left[7])); 
 
 endmodule
 
