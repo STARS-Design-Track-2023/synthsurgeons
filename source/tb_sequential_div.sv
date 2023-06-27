@@ -32,7 +32,7 @@ module tb_sequential_div ();
   logic   [7:0]  tb_quotient;
 
   // Declare the Test Bench Signals for Expected Results
-  logic tb_expected_quotient;
+  logic [7:0] tb_expected_quotient;
 
   // Clock generation block
   always begin
@@ -124,10 +124,10 @@ module tb_sequential_div ();
   endtask
 
   // DUT Portmap
-  sequential_divider DUT 
+  sequential_div DUT 
   (
     .clk(tb_clk), 
-    .nrst(tb_nrst), 
+    .n_rst(tb_nrst), 
     .flag(tb_en),
     .divider(tb_divider),
     .count(tb_dividend),
@@ -202,7 +202,7 @@ module tb_sequential_div ();
     check_output("after division #1 finishes");
 
     // Pulse tb_en
-    tb_dividend = 22000;
+    tb_dividend = 22256;
     tb_en = 1;
     #(CLK_PERIOD);
     tb_en = 0;

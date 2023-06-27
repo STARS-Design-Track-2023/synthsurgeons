@@ -1,0 +1,42 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Tue Jun 27 15:56:27 2023
+[*]
+[dumpfile] "/home/shay/c/ecng042/Desktop/stars/synthsurgeons/dump.vcd"
+[dumpfile_mtime] "Tue Jun 27 15:38:09 2023"
+[dumpfile_size] 6355
+[savefile] "/home/shay/c/ecng042/Desktop/stars/synthsurgeons/sqdv.gtkw"
+[timestart] 490000
+[size] 1846 1016
+[pos] -89 -89
+*-18.169073 910000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_sequential_div.
+[sst_width] 233
+[signals_width] 230
+[sst_expanded] 1
+[sst_vpaned_height] 289
+@420
+tb_sequential_div.tb_test_case_num
+@28
+tb_sequential_div.tb_clk
+tb_sequential_div.tb_nrst
+tb_sequential_div.tb_check
+@22
+tb_sequential_div.tb_divider[15:0]
+tb_sequential_div.tb_dividend[15:0]
+@28
+tb_sequential_div.tb_en
+@24
+tb_sequential_div.tb_expected_quotient[7:0]
+tb_sequential_div.DUT.q_out[7:0]
+@23
+tb_sequential_div.DUT.Q[7:0]
+@22
+tb_sequential_div.DUT.R[23:0]
+tb_sequential_div.DUT.D[15:0]
+@28
+tb_sequential_div.DUT.load
+tb_sequential_div.DUT.div
+tb_sequential_div.DUT.done
+[pattern_trace] 1
+[pattern_trace] 0
