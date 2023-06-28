@@ -41,7 +41,11 @@ Clock and nRst omitted from input lists.
   - Outputs: [3:0] soundgen_note
 
 ## Testbenching
-- tb_.sv : This is the test bench used to test your design.
+- tb_synth.sv : This is the test bench used to test your design.
+- tb_sequential_div.sv: This test bench was used to test the sequential divider.
+- tb_pwm.sv: This test bench was used to test the pulse wave modulation module. 
+- tb_oscillator.sv: This test bench was used to test the oscillator, or frequency generator.
+  
 
 ## Pin Layout
 Put all the GPIO pin numbers, i/o/io determination, and labels
