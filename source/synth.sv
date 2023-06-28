@@ -54,7 +54,7 @@ logic [7:0] sample;
 waveshaper waveshaper (.mode(wave_select), .quotient(quotient), .sample(sample));
 
 
-pwm pwm (.clk(clk), .n_rst(n_rst), .sample(sample), .pwm_o(pwm_o));
+pwm pwm (.clk(clk), .n_rst(n_rst), .sample(sample), .pwm_o(pwm_o), .en(en));
 
 
 clock_8Hz clk8 (.clk(clk), .n_rst(n_rst), .en(en), .is_FPGA(1'b0), .flag(clkdiv));
