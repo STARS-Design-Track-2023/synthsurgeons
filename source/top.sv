@@ -17,18 +17,18 @@ module top
 );
 
 
-logic [7:0] val;
+/*logic [7:0] val;
 ssdec ssdec1 (.val(val[3:0]), .dp_on(1'b0), .segment(ss0));
-ssdec ssdec2 (.val(val[7:4]), .dp_on(1'b0), .segment(ss1));
+ssdec ssdec2 (.val(val[7:4]), .dp_on(1'b0), .segment(ss1));*/
 
-synth_top U1 (.keypad_i(pb[14:0]), .en(pb[18]), .clk(hz1000), .n_rst(~pb[19]), .pwm_o(left[7]), .quotient(val)); 
-assign left[6] = hz12M;
+synth_top U1 (.keypad_i(pb[14:0]), .en(pb[18]), .clk(hz12M), .n_rst(~pb[19]), .pwm_o(left[7]));//, .quotient(val)); 
+//assign left[6] = hz12M;
 
 endmodule
  
 
  // Seven Segment decoder
-module ssdec (input logic [3:0] val, input logic dp_on, output [7:0] segment);
+/*module ssdec (input logic [3:0] val, input logic dp_on, output [7:0] segment);
 always_comb begin : encoder
   case(val)
   4'b0000 : segment[6:0] = 7'h3F; // 11111100
@@ -50,7 +50,7 @@ always_comb begin : encoder
   endcase
   segment[7] = dp_on;
 end
-endmodule
+endmodule*/
 
 
 
