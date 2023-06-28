@@ -7,8 +7,8 @@
 * Julia Scott
 * (TA) Aidan Prendergast
 
-## [Project Name]
-Description of functionality, how to use it, and any supporting equipment required
+## [Synth Surgeons: Synthesizer]
+Our syntesizer is a 13 note full octave ranging from a low C to a high C each with unique frequencies. We have a button for mode toggling that enables the user to switch between 3 waveforms: sawtooth, triangle, square. There is also a button for sound toggling that mimics the function of a soundboard equipped with 2 unique sounds. Finally we have an active-low enable that allows the synthesizer to operate only when enable is on and an asynchronous active-low reset.
 
 ## Base Source Files
 Clock and nRst omitted from input lists.
