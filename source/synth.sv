@@ -26,13 +26,13 @@ logic [3:0] keycode;
 logic mode_key, sound_edge;
 keypad_encoder kp_encoder (.clk(clk), .n_rst(n_rst), .pb(keypad_i), .keycode(keycode), .mode_edge(mode_key), .sound_edge(sound_edge));
 
-
+logic clkdiv;
 logic [3:0] sound_series;
-sound_series_fsm SS_FSM (.clk(clk), .n_rst(n_rst), .sound_edge(sound_edge),.note_out(sound_series));
+sound_series_fsm SS_FSM (.clk(clk), .n_rst(n_rst), .sound_edge(sound_edge),.note_out(sound_series), .clkdiv(clkdiv));
 
 
 logic [15:0] divider;
-frequency_divider frqdiv (.keycode(keycode),.sound_series(sound_series),.divider(divider), .is_FPGA(1'b0), .en(en));
+frequency_divider frqdiv (.keycode(keycode),.sound_series(sound_series),.divider(divider), .is_FPGA(1'b1), .en(en));
 
 logic [15:0] count;
 oscillator osc (.clk(clk), .n_rst(n_rst),.divider(divider),.count(count), .en(en));
@@ -54,6 +54,9 @@ logic [7:0] sample;
 waveshaper waveshaper (.mode(wave_select), .quotient(quotient), .sample(sample));
 
 
-pwm pwm (.clk(clk), .n_rst(n_rst), .sample(sample), .pwm_o(pwm_o), .en(en));
+pwm pwm (.clk(clk), .n_rst(n_rst), .sample(sample), .pwm_o(pwm_o));
+
+
+clock_8Hz clk8 (.clk(clk), .n_rst(n_rst), .en(en), .is_FPGA(1'b1), .flag(clkdiv));
 
 endmodule 
