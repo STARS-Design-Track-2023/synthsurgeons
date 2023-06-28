@@ -126,7 +126,7 @@ module tb_synth ();
   (
     .clk(tb_clk), 
     .n_rst(tb_nrst), 
-    .en(tb_D),
+    .en(tb_en),
     .keypad_i(tb_pb),
     .pwm_o(tb_pwm)
   );

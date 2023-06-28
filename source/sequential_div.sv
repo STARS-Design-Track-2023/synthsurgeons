@@ -7,6 +7,7 @@ logic div, done, load;
 logic [23: 0] R, next_r;
 logic [7:0] Q, next_q, next_q_out;
 logic [15:0] D, next_d, D_count, dividend;
+logic [6:0] Q_lower;
 
 //Iterations of divider
 
@@ -85,6 +86,7 @@ always_ff @(posedge clk, negedge n_rst) begin
 end
 
 //Divider block
+assign Q_lower = Q[6:0];
 
 always_comb begin
     next_r = R;
@@ -96,13 +98,13 @@ always_comb begin
         next_d = divider;    
     end
     if(div) begin
-        if(R[22:7] >= D) begin
+        if(R[23:7] >= {1'b0, D}) begin
             next_r = {R << 1} - {D, 8'b0};
-            next_q = {Q[6:0], 1'b1};
+            next_q = {Q_lower, 1'b1};
         end
         else begin
             next_r = {R << 1};
-            next_q = {Q[6:0], 1'b0};
+            next_q = {Q_lower, 1'b0};
         end
     end
 end

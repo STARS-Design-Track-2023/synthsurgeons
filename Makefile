@@ -21,7 +21,7 @@ TOP_FILE         := synth.sv
 COMPONENT_FILES  := clock_8Hz.sv clock_div.sv frequency_divider.sv keypad_encoder.sv mode_fsm.sv oscillator.sv pwm.sv sequential_div.sv sound_series_fsm.sv waveshaper.sv
 # Specify the filepath of the test bench you want to use (ie. tb_top_level.sv)
 # (do not include the source folder in the name)
-TB               :=  
+TB               :=  tb_synth.sv
 
 # Get the top level design and test_bench module names
 TB_MODULE		 := $(notdir $(basename $(TB)))
