@@ -182,7 +182,7 @@ module tb_synth ();
     // ************************************************************************
     // Start Testcase, Task finishes at Negedge
     start_testcase("Low C");
-    tb_pb = 14'b000_000_000_000_01;
+    tb_pb = 15'b00_000_000_000_000_1;
     tb_en = 1'b1;
 
     // No Checks
@@ -193,7 +193,7 @@ module tb_synth ();
     // ************************************************************************
     // Start Testcase, Task finishes at Negedge
     start_testcase("A");
-    tb_pb = 14'b000_100_000_000_00;
+    tb_pb = 15'b00_000_100_000_000_0;
     tb_en = 1'b1;
 
     // No Checks
@@ -204,7 +204,7 @@ module tb_synth ();
     // ************************************************************************
     // Start Testcase, Task finishes at Negedge
     start_testcase("High C");
-    tb_pb = 14'b100_000_000_000_00;
+    tb_pb = 15'b00_100_000_000_000_0;
     tb_en = 1'b1;
 
     // No Checks
