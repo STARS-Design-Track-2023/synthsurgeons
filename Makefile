@@ -15,14 +15,13 @@ export LD_LIBRARY_PATH := /home/shay/a/ece270/lib:$(LD_LIBRARY_PATH)
 
 # Specify the name of the top level file (do not include the source folder in the name)
 # NOTE: YOU WILL NEED TO SET THIS VARIABLE'S VALUE WHEN WORKING WITH HEIRARCHICAL DESIGNS
-TOP_FILE         := sequential_div.sv
+TOP_FILE         := synth.sv 
 # List internal component/block files here (separate the filenames with spaces)
 # NOTE: YOU WILL NEED TO SET THIS VARIABLE'S VALUE WHEN WORKING WITH HEIRARCHICAL DESIGNS
-COMPONENT_FILES  := 
-
+COMPONENT_FILES  := clock_8Hz.sv clock_div.sv frequency_divider.sv keypad_encoder.sv mode_fsm.sv oscillator.sv pwm.sv sequential_div.sv sound_series_fsm.sv waveshaper.sv
 # Specify the filepath of the test bench you want to use (ie. tb_top_level.sv)
 # (do not include the source folder in the name)
-TB               :=  tb_sequential_div.sv
+TB               :=  
 
 # Get the top level design and test_bench module names
 TB_MODULE		 := $(notdir $(basename $(TB)))

@@ -1,6 +1,7 @@
-module frequency_divider (input logic [3:0] keycode, sound_series, input logic is_FPGA, en, output logic [15:0] divider);
+module frequency_divider (input logic [3:0] keycode, input logic [3:0] sound_series, input logic is_FPGA, en, output logic [15:0] divider);
 
-logic [15:0] LUT_10MHz, LUT_12MHz;
+logic [15:0] LUT_10MHz;
+logic [15:0] LUT_12MHz;
 
 /*
 logic [15:0] LUT_10MHz [13] = {
