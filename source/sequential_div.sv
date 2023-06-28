@@ -29,7 +29,7 @@ end
 //State Machine
 
 typedef enum logic [1:0] {Start, Load, Divide, Done} FSM;
-  logic [1:0] state, next_state;
+logic [1:0] state, next_state;
 
 always_comb begin : NEXT_STATE_LOGIC
     next_state = state;
