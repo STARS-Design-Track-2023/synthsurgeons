@@ -125,9 +125,9 @@ module tb_pwm ();
   pwm DUT 
   (
     .clk(tb_clk), 
-    .nrst(tb_nrst), 
+    .n_rst(tb_nrst), 
     .sample(tb_sample),
-    //.enable(tb_en),
+    .en(tb_en),
     .pwm_o(tb_pwm_o)
   );
 
