@@ -66,6 +66,51 @@ speaker, amplifier, low-pass filter
 All the stuff from the proposal goes here, obviously updated from the time you did the proposal to the final layout
 Include more than just block diagrams, including sub-block diagrams, state-transition diagrams, flowcharts, and timing diagrams
 
+Flowchart
+
+![flowchart](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/f0ff4102-c071-4939-adfe-001c8f36d0e8)
+
+Main RTL
+
+![RTL_main](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/f2f418dd-1152-48c8-a39e-a9dd90275d47)
+
+Keypad Encoder
+
+![keypad_encoder](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/47c6f2a9-8494-4042-864c-158b86bd1d06)
+
+Frequency Divider 
+
+![RTL_freq_div](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/81034e0c-ccb3-488e-8595-509172016e37)
+
+Oscillator
+
+![oscillator](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/f232afd4-477d-4235-8390-e24140fac557)
+
+Sequential Divider
+
+![RTL_sequential_div](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/e926f827-160a-409a-b59f-b3d8207102c0)
+
+Timing and State Diagrams
+
+![timing_and_state](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/32993f3d-a795-44c2-be84-9c18f7dbce35)
+
+Wave Shaper
+
+![wave_shaper](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/3f77870c-2129-4335-a919-94a7a485853e)
+
+Clock Divider
+
+![RTL_clock_div](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/f376f021-0ec4-42d7-9ff1-2232053d2200)
+
+PWM
+
+![PWM](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/9a4fe96f-b5b7-4b2d-984b-8bbde40f5887)
+
+FSM
+
+![fsm](https://github.com/STARS-Design-Track-2023/synthsurgeons/assets/75226287/e70bb433-3284-487e-95e2-45f6ace6540e)
+
+
 # Deadlines and Events
 ### Monday June 19th: Design Review Presentations
   
