@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Wed Jun 28 18:16:24 2023
+[*] Thu Jun 29 17:33:49 2023
 [*]
 [dumpfile] "/home/shay/c/ecng047/Documents/projet/synthsurgeons/dump.vcd"
-[dumpfile_mtime] "Wed Jun 28 18:03:17 2023"
-[dumpfile_size] 12993512
+[dumpfile_mtime] "Thu Jun 29 17:28:58 2023"
+[dumpfile_size] 18795354
 [savefile] "/home/shay/c/ecng047/Documents/projet/synthsurgeons/synth.gtkw"
-[timestart] 231010000
+[timestart] 1686000000
 [size] 1846 1016
-[pos] -51 -51
-*-17.512293 231106000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -39 -39
+*-30.512293 10277000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_synth.
 [treeopen] tb_synth.DUT.
 [sst_width] 233
@@ -31,23 +31,18 @@ tb_synth.tb_en
 @22
 tb_synth.DUT.keypad_i[14:0]
 tb_synth.DUT.keycode[3:0]
+@23
 tb_synth.DUT.sound_series[3:0]
+@22
 tb_synth.DUT.divider[15:0]
 tb_synth.DUT.count[15:0]
 tb_synth.DUT.quotient[7:0]
+@8022
 tb_synth.DUT.sample[7:0]
 @28
 tb_synth.DUT.pwm_o
 tb_synth.DUT.sample_now
 @200
 -DEBUG
-@22
-tb_synth.DUT.seq_div.D[15:0]
-tb_synth.DUT.seq_div.Q[7:0]
-tb_synth.DUT.seq_div.R[23:0]
-@28
-tb_synth.DUT.seq_div.load
-tb_synth.DUT.seq_div.div
-tb_synth.DUT.seq_div.done
 [pattern_trace] 1
 [pattern_trace] 0

@@ -228,10 +228,14 @@ module tb_synth ();
     // Test Case 5: Square Wave
     // ************************************************************************
     // Start Testcase, Task finishes at Negedge
-    start_testcase("Tri Wave");
+    start_testcase("Sq Wave");
     
     tb_pb = 15'b01_000_000_000_000_0; // Change Modes
     tb_en = 1'b1;
+    #(CLK_PERIOD);
+    tb_pb = 15'b00_000_000_000_000_0; // Off
+    #(CLK_PERIOD);
+    tb_pb = 15'b01_000_000_000_000_0; // Change Modes
     #(CLK_PERIOD);
     tb_pb = 15'b00_000_000_000_000_0; // Off
     #(CLK_PERIOD);

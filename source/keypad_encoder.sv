@@ -49,7 +49,7 @@ if (n_rst == 1'b0) begin
     end  
 end
 
-assign mode_edge = sync_out[14] & ~last_mk;
+assign mode_edge = sync_out[13] & ~last_mk;
 
 logic last_sk;
 always_ff @(posedge clk, negedge n_rst) begin : s_detect
@@ -62,7 +62,7 @@ if (n_rst == 1'b0) begin
     end  
 end
 
-assign sound_edge = sync_out[13] & ~last_sk;
+assign sound_edge = sync_out[14] & ~last_sk;
 
 
 endmodule
