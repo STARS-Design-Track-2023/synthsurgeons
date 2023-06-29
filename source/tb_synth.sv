@@ -186,7 +186,7 @@ module tb_synth ();
     tb_en = 1'b1;
 
     // No Checks
-    #(CLK_PERIOD * 38224)
+    #(CLK_PERIOD * 38224);
 
     // ************************************************************************
     // Test Case 3: E Note
@@ -197,7 +197,7 @@ module tb_synth ();
     tb_en = 1'b1;
 
     // No Checks
-    #(CLK_PERIOD * 22728)
+    #(CLK_PERIOD * 22728);
 
     // ************************************************************************
     // Test Case 4: High C Note
@@ -208,7 +208,39 @@ module tb_synth ();
     tb_en = 1'b1;
 
     // No Checks
-    #(CLK_PERIOD * 19112)
+    #(CLK_PERIOD * 19112);
+
+
+    // ************************************************************************
+    // Test Case 4: Tri Wave
+    // ************************************************************************
+    // Start Testcase, Task finishes at Negedge
+    start_testcase("Tri Wave");
+    tb_pb = 15'b01_000_000_000_000_0; // Change Modes
+    tb_en = 1'b1;
+    #(CLK_PERIOD);
+    tb_pb = 15'b00_100_000_000_000_0; // High C
+
+    // No Checks
+    #(CLK_PERIOD * 19112);
+
+    // ************************************************************************
+    // Test Case 5: Square Wave
+    // ************************************************************************
+    // Start Testcase, Task finishes at Negedge
+    start_testcase("Tri Wave");
+    
+    tb_pb = 15'b01_000_000_000_000_0; // Change Modes
+    tb_en = 1'b1;
+    #(CLK_PERIOD);
+    tb_pb = 15'b00_000_000_000_000_0; // Off
+    #(CLK_PERIOD);
+    tb_pb = 15'b01_000_000_000_000_0; // Change Modes
+    #(CLK_PERIOD);
+    tb_pb = 15'b00_100_000_000_000_0; // High C
+
+    // No Checks
+    #(CLK_PERIOD * 19112);
 
     $display("Simulation complete");
     $stop;
