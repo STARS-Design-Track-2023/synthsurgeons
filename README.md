@@ -56,8 +56,9 @@ Keys [12:0] (I): 13 buttons assigned to each of the 13 notes in one middle-range
 Mode [13] (I): 1 button that toggles 3 waveforms
 Sound_series [14] (I): 1 button that toggles 2 pre-programmed sounds
 pwm_o [15] (O): System output that connects to speakers
+LEDs [28:16] (O): Note-indicating LEDs
 
-Total I/O pins: 16
+Total I/O pins: 29
 
 ## Supporting Equipment
 speaker, amplifier, low-pass filter
