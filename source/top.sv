@@ -17,20 +17,23 @@ module top
 );
 
 
-/*logic [7:0] val;
-ssdec ssdec1 (.val(val[3:0]), .dp_on(1'b0), .segment(ss0));
-ssdec ssdec2 (.val(val[7:4]), .dp_on(1'b0), .segment(ss1));*/
-logic [3:0] display; 
-logic [12:0] note;
-synth_top U1 (.keypad_i(pb[14:0]), .en(~pb[18]), .clk(hz12M), .n_rst(~pb[19]), .pwm_o(left[7]), .sound_series(display));//, .quotient(val)); 
-//assign left[6] = hz12M;
-assign {left[4:0], right[7:0]}=note;
+
+//logic [3:0] display; 
+//logic [12:0] note;
+synth_top U1 (.keypad_i(pb[14:0]), .en(~pb[18]), .clk(hz12M), .n_rst(~pb[19]), .pwm_o(left[7]), .sound_series(display));
+
+/*assign {left[4:0], right[7:0]}=note;
 
 always_comb begin
-  note=0;
-  note[display]=1'b1;
+  //note[display]=1'b1;
+    //note=0;
+
+  if (keypad_i==1'b1) begin
+    note[pb]=1'b1; end
+  else if (sound_series==1'b1) begin
+    display[sound_series]=1'b1; end
 end
-endmodule
+endmodule*/
  
 
  // Seven Segment decoder

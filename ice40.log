@@ -643,9 +643,9 @@ No latch inferred for signal `\clock_div.\next_count' from process `\clock_div.$
 No latch inferred for signal `\clock_8Hz.\flag' from process `\clock_8Hz.$proc$source/clock_8Hz.sv:0$45'.
 No latch inferred for signal `\clock_8Hz.\next_count' from process `\clock_8Hz.$proc$source/clock_8Hz.sv:0$45'.
 No latch inferred for signal `\top.\note' from process `\top.$proc$source/top.sv:0$29'.
-No latch inferred for signal `\top.$bitselwrite$mask$source/top.sv:31$24' from process `\top.$proc$source/top.sv:0$29'.
-No latch inferred for signal `\top.$bitselwrite$data$source/top.sv:31$25' from process `\top.$proc$source/top.sv:0$29'.
-No latch inferred for signal `\top.$bitselwrite$sel$source/top.sv:31$26' from process `\top.$proc$source/top.sv:0$29'.
+No latch inferred for signal `\top.$bitselwrite$mask$source/top.sv:28$24' from process `\top.$proc$source/top.sv:0$29'.
+No latch inferred for signal `\top.$bitselwrite$data$source/top.sv:28$25' from process `\top.$proc$source/top.sv:0$29'.
+No latch inferred for signal `\top.$bitselwrite$sel$source/top.sv:28$26' from process `\top.$proc$source/top.sv:0$29'.
 
 17.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
 Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/home/shay/a/ece270/bin/../share/yosys/ice40/cells_sim.v:1414$438'.
@@ -965,8 +965,8 @@ Optimizing module ice40hx8k.
 
 17.8. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
-Removed 102 unused cells and 512 unused wires.
-<suppressed ~162 debug messages>
+Removed 104 unused cells and 513 unused wires.
+<suppressed ~164 debug messages>
 
 17.9. Executing CHECK pass (checking for obvious problems).
 Checking module ice40hx8k...
@@ -1345,9 +1345,6 @@ Removed top 24 bits (of 32) from port Y of cell ice40hx8k.$flatten\top_inst.\U1.
 Removed top 24 bits (of 32) from port B of cell ice40hx8k.$flatten\top_inst.\U1.\pwm.$ge$source/pwm.sv:22$101 ($ge).
 Removed top 31 bits (of 32) from port B of cell ice40hx8k.$flatten\top_inst.\U1.\clk8.$add$source/clock_8Hz.sv:27$48 ($add).
 Removed top 11 bits (of 32) from port Y of cell ice40hx8k.$flatten\top_inst.\U1.\clk8.$add$source/clock_8Hz.sv:27$48 ($add).
-Removed top 27 bits (of 32) from port A of cell ice40hx8k.$flatten\top_inst.$neg$source/top.sv:0$37 ($neg).
-Converting cell ice40hx8k.$flatten\top_inst.$neg$source/top.sv:0$37 ($neg) from signed to unsigned.
-Removed top 1 bits (of 5) from port A of cell ice40hx8k.$flatten\top_inst.$neg$source/top.sv:0$37 ($neg).
 Removed top 31 bits (of 32) from wire ice40hx8k.$flatten\top_inst.\U1.\SS_FSM.$ternary$source/sound_series_fsm.sv:15$128_Y.
 Removed top 31 bits (of 32) from wire ice40hx8k.$flatten\top_inst.\U1.\SS_FSM.$ternary$source/sound_series_fsm.sv:16$129_Y.
 Removed top 3 bits (of 4) from wire ice40hx8k.$flatten\top_inst.\U1.\SS_FSM.$ternary$source/sound_series_fsm.sv:27$131_Y.
@@ -1359,16 +1356,15 @@ Removed top 2 bits (of 4) from wire ice40hx8k.$flatten\top_inst.\U1.\SS_FSM.$ter
 Removed top 3 bits (of 4) from wire ice40hx8k.$flatten\top_inst.\U1.\SS_FSM.$ternary$source/sound_series_fsm.sv:33$137_Y.
 Removed top 11 bits (of 32) from wire ice40hx8k.$flatten\top_inst.\U1.\clk8.$add$source/clock_8Hz.sv:27$48_Y.
 Removed top 24 bits (of 32) from wire ice40hx8k.$flatten\top_inst.\U1.\clk_div.$add$source/clock_div.sv:28$54_Y.
-Removed top 16 bits (of 32) from wire ice40hx8k.$flatten\top_inst.\U1.\osc.$add$source/oscillator.sv:17$96_Y.
-Removed top 7 bits (of 8) from wire ice40hx8k.$flatten\top_inst.\U1.\seq_div.$3\next_q[7:0].
 Removed top 29 bits (of 32) from wire ice40hx8k.$flatten\top_inst.\U1.\seq_div.$add$source/sequential_div.sv:23$108_Y.
 Removed top 28 bits (of 32) from wire ice40hx8k.$flatten\uart_inst.\uart_tx_inst.$sub$ice40/uart/uart_tx.v:103$614_Y.
+Removed top 13 bits (of 32) from wire ice40hx8k.$flatten\uart_inst.\uart_tx_inst.$sub$ice40/uart/uart_tx.v:88$608_Y.
 
 17.14. Executing PEEPOPT pass (run peephole optimizers).
 
 17.15. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
-Removed 0 unused cells and 15 unused wires.
+Removed 0 unused cells and 14 unused wires.
 <suppressed ~1 debug messages>
 
 17.16. Executing SHARE pass (SAT-based resource sharing).
@@ -1395,7 +1391,6 @@ Removed 0 unused cells and 3 unused wires.
 
 17.20. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module ice40hx8k:
-  creating $macc model for $flatten\top_inst.$neg$source/top.sv:0$37 ($neg).
   creating $macc model for $flatten\top_inst.\U1.\clk8.$add$source/clock_8Hz.sv:27$48 ($add).
   creating $macc model for $flatten\top_inst.\U1.\clk_div.$add$source/clock_div.sv:28$54 ($add).
   creating $macc model for $flatten\top_inst.\U1.\osc.$add$source/oscillator.sv:17$96 ($add).
@@ -1414,30 +1409,28 @@ Extracting $alu and $macc cells in module ice40hx8k:
   creating $alu model for $macc $flatten\top_inst.\U1.\osc.$add$source/oscillator.sv:17$96.
   creating $alu model for $macc $flatten\top_inst.\U1.\clk_div.$add$source/clock_div.sv:28$54.
   creating $alu model for $macc $flatten\top_inst.\U1.\clk8.$add$source/clock_8Hz.sv:27$48.
-  creating $alu model for $macc $flatten\top_inst.$neg$source/top.sv:0$37.
   creating $alu model for $flatten\top_inst.\U1.\osc.$ge$source/oscillator.sv:14$95 ($ge): new $alu
   creating $alu model for $flatten\top_inst.\U1.\pwm.$ge$source/pwm.sv:22$101 ($ge): new $alu
   creating $alu model for $flatten\top_inst.\U1.\pwm.$lt$source/pwm.sv:29$103 ($lt): new $alu
   creating $alu model for $flatten\top_inst.\U1.\seq_div.$ge$source/sequential_div.sv:101$121 ($ge): new $alu
   creating $alu model for $flatten\top_inst.\U1.\waveshaper.$ge$source/waveshaper.sv:17$146 ($ge): new $alu
   creating $alu model for $flatten\uart_inst.\uart_tx_inst.$gt$ice40/uart/uart_tx.v:86$607 ($gt): new $alu
-  creating $alu cell for $flatten\uart_inst.\uart_tx_inst.$gt$ice40/uart/uart_tx.v:86$607: $auto$alumacc.cc:485:replace_alu$1289
-  creating $alu cell for $flatten\top_inst.\U1.\waveshaper.$ge$source/waveshaper.sv:17$146: $auto$alumacc.cc:485:replace_alu$1294
-  creating $alu cell for $flatten\top_inst.\U1.\seq_div.$ge$source/sequential_div.sv:101$121: $auto$alumacc.cc:485:replace_alu$1307
-  creating $alu cell for $flatten\top_inst.\U1.\pwm.$lt$source/pwm.sv:29$103: $auto$alumacc.cc:485:replace_alu$1316
-  creating $alu cell for $flatten\top_inst.\U1.\pwm.$ge$source/pwm.sv:22$101: $auto$alumacc.cc:485:replace_alu$1321
-  creating $alu cell for $flatten\top_inst.\U1.\osc.$ge$source/oscillator.sv:14$95: $auto$alumacc.cc:485:replace_alu$1334
-  creating $alu cell for $flatten\top_inst.$neg$source/top.sv:0$37: $auto$alumacc.cc:485:replace_alu$1347
-  creating $alu cell for $flatten\top_inst.\U1.\clk8.$add$source/clock_8Hz.sv:27$48: $auto$alumacc.cc:485:replace_alu$1350
-  creating $alu cell for $flatten\top_inst.\U1.\clk_div.$add$source/clock_div.sv:28$54: $auto$alumacc.cc:485:replace_alu$1353
-  creating $alu cell for $flatten\top_inst.\U1.\osc.$add$source/oscillator.sv:17$96: $auto$alumacc.cc:485:replace_alu$1356
-  creating $alu cell for $flatten\top_inst.\U1.\pwm.$add$source/pwm.sv:26$102: $auto$alumacc.cc:485:replace_alu$1359
-  creating $alu cell for $flatten\top_inst.\U1.\seq_div.$add$source/sequential_div.sv:23$108: $auto$alumacc.cc:485:replace_alu$1362
-  creating $alu cell for $flatten\top_inst.\U1.\seq_div.$sub$source/sequential_div.sv:102$123: $auto$alumacc.cc:485:replace_alu$1365
-  creating $alu cell for $flatten\top_inst.\U1.\waveshaper.$sub$source/waveshaper.sv:12$144: $auto$alumacc.cc:485:replace_alu$1368
-  creating $alu cell for $flatten\uart_inst.\uart_tx_inst.$sub$ice40/uart/uart_tx.v:103$614: $auto$alumacc.cc:485:replace_alu$1371
-  creating $alu cell for $flatten\uart_inst.\uart_tx_inst.$sub$ice40/uart/uart_tx.v:88$608: $auto$alumacc.cc:485:replace_alu$1374
-  created 16 $alu and 0 $macc cells.
+  creating $alu cell for $flatten\uart_inst.\uart_tx_inst.$gt$ice40/uart/uart_tx.v:86$607: $auto$alumacc.cc:485:replace_alu$1288
+  creating $alu cell for $flatten\top_inst.\U1.\waveshaper.$ge$source/waveshaper.sv:17$146: $auto$alumacc.cc:485:replace_alu$1293
+  creating $alu cell for $flatten\top_inst.\U1.\seq_div.$ge$source/sequential_div.sv:101$121: $auto$alumacc.cc:485:replace_alu$1306
+  creating $alu cell for $flatten\top_inst.\U1.\pwm.$lt$source/pwm.sv:29$103: $auto$alumacc.cc:485:replace_alu$1315
+  creating $alu cell for $flatten\top_inst.\U1.\pwm.$ge$source/pwm.sv:22$101: $auto$alumacc.cc:485:replace_alu$1320
+  creating $alu cell for $flatten\top_inst.\U1.\osc.$ge$source/oscillator.sv:14$95: $auto$alumacc.cc:485:replace_alu$1333
+  creating $alu cell for $flatten\top_inst.\U1.\clk8.$add$source/clock_8Hz.sv:27$48: $auto$alumacc.cc:485:replace_alu$1346
+  creating $alu cell for $flatten\top_inst.\U1.\clk_div.$add$source/clock_div.sv:28$54: $auto$alumacc.cc:485:replace_alu$1349
+  creating $alu cell for $flatten\top_inst.\U1.\osc.$add$source/oscillator.sv:17$96: $auto$alumacc.cc:485:replace_alu$1352
+  creating $alu cell for $flatten\top_inst.\U1.\pwm.$add$source/pwm.sv:26$102: $auto$alumacc.cc:485:replace_alu$1355
+  creating $alu cell for $flatten\top_inst.\U1.\seq_div.$add$source/sequential_div.sv:23$108: $auto$alumacc.cc:485:replace_alu$1358
+  creating $alu cell for $flatten\top_inst.\U1.\seq_div.$sub$source/sequential_div.sv:102$123: $auto$alumacc.cc:485:replace_alu$1361
+  creating $alu cell for $flatten\top_inst.\U1.\waveshaper.$sub$source/waveshaper.sv:12$144: $auto$alumacc.cc:485:replace_alu$1364
+  creating $alu cell for $flatten\uart_inst.\uart_tx_inst.$sub$ice40/uart/uart_tx.v:103$614: $auto$alumacc.cc:485:replace_alu$1367
+  creating $alu cell for $flatten\uart_inst.\uart_tx_inst.$sub$ice40/uart/uart_tx.v:88$608: $auto$alumacc.cc:485:replace_alu$1370
+  created 15 $alu and 0 $macc cells.
 
 17.21. Executing OPT pass (performing simple optimizations).
 
@@ -1565,7 +1558,7 @@ No more expansions possible.
 
 17.27.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module ice40hx8k.
-<suppressed ~83 debug messages>
+<suppressed ~79 debug messages>
 
 17.27.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ice40hx8k'.
@@ -1631,50 +1624,50 @@ Removed 0 multiplexer ports.
 
 17.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \ice40hx8k.
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][1]$1522:
-      Old ports: A=16'1001111110011110, B=16'1001011010101001, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509
-      New ports: A=2'10, B=2'01, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [1:0]
-      New connections: $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [15:2] = { 4'1001 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [1] 2'11 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [1] 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [1] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [1] }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][0]$1519:
-      Old ports: A=16'1011001100101100, B=16'1010100100011100, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508
-      New ports: A=2'10, B=2'01, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [5:4]
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [15:6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [3:0] } = { 3'101 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [5:4] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [5] 7'1001100 }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][5]$1534:
-      Old ports: A=16'0110010010001110, B=16'0101111011101010, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515
-      New ports: A=2'01, B=2'10, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [2] }
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [15:6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [4:3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [1:0] } = { 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [5] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [5] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [5] 4'0110 }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][6]$1537:
-      Old ports: A=16'0101100110010101, B=16'0000000000000001, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517
-      New ports: A=1'1, B=1'0, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517 [2]
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517 [15:3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517 [1:0] } = { 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517 [2] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517 [2] 3'001 }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][3][4]$1486:
-      Old ports: A=4'1100, B=4'1111, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1469
-      New ports: A=1'0, B=1'1, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1469 [0]
-      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1469 [3:1] = { 2'11 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1469 [0] }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][3][3]$1483:
-      Old ports: A=4'1001, B=4'1011, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1467
-      New ports: A=1'0, B=1'1, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1467 [1]
-      New connections: { $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1467 [3:2] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1467 [0] } = 3'101
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][3][2]$1480:
-      Old ports: A=4'0101, B=4'0111, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1466
-      New ports: A=1'0, B=1'1, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1466 [1]
-      New connections: { $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1466 [3:2] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1466 [0] } = 3'011
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][3][1]$1477:
-      Old ports: A=4'0010, B=4'0100, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1464
-      New ports: A=2'01, B=2'10, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1464 [2:1]
-      New connections: { $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1464 [3] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1464 [0] } = 2'00
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][3][0]$1474:
-      Old ports: A=4'1111, B=4'0000, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1463
-      New ports: A=1'1, B=1'0, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1463 [0]
-      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1463 [3:1] = { $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1463 [0] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1463 [0] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1463 [0] }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][3]$1528:
-      Old ports: A=16'0111111010110000, B=16'0111011110010101, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512
-      New ports: A=2'10, B=2'01, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [0] }
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [15:6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [4:1] } = { 4'0111 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [5] 2'11 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [0] 4'1010 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [0] 1'0 }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][4]$1531:
-      Old ports: A=16'0111000011011111, B=16'0110101010001000, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514
-      New ports: A=2'01, B=2'10, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [0] }
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [15:10] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [8:1] } = { 3'011 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [9] 3'001 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [0] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [0] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][1]$1518:
+      Old ports: A=16'1001111110011110, B=16'1001011010101001, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [1:0]
+      New connections: $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [15:2] = { 4'1001 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [1] 2'11 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [1] 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [1] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][0]$1515:
+      Old ports: A=16'1011001100101100, B=16'1010100100011100, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [5:4]
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [15:6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [3:0] } = { 3'101 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [5:4] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [5] 7'1001100 }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][5]$1530:
+      Old ports: A=16'0110010010001110, B=16'0101111011101010, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [2] }
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [15:6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [4:3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [1:0] } = { 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [5] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [5] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [5] 4'0110 }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][6]$1533:
+      Old ports: A=16'0101100110010101, B=16'0000000000000001, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513
+      New ports: A=1'1, B=1'0, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513 [2]
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513 [15:3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513 [1:0] } = { 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513 [2] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513 [2] 3'001 }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][3][4]$1482:
+      Old ports: A=4'1100, B=4'1111, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1465
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1465 [0]
+      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1465 [3:1] = { 2'11 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1465 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][3][3]$1479:
+      Old ports: A=4'1001, B=4'1011, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1463
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1463 [1]
+      New connections: { $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1463 [3:2] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1463 [0] } = 3'101
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][3][2]$1476:
+      Old ports: A=4'0101, B=4'0111, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1462
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1462 [1]
+      New connections: { $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1462 [3:2] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1462 [0] } = 3'011
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][3][1]$1473:
+      Old ports: A=4'0010, B=4'0100, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1460
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1460 [2:1]
+      New connections: { $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1460 [3] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1460 [0] } = 2'00
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][3][0]$1470:
+      Old ports: A=4'1111, B=4'0000, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1459
+      New ports: A=1'1, B=1'0, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1459 [0]
+      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1459 [3:1] = { $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1459 [0] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1459 [0] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1459 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][3]$1524:
+      Old ports: A=16'0111111010110000, B=16'0111011110010101, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508
+      New ports: A=2'10, B=2'01, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [0] }
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [15:6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [4:1] } = { 4'0111 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [5] 2'11 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [0] 4'1010 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][4]$1527:
+      Old ports: A=16'0111000011011111, B=16'0110101010001000, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [0] }
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [15:10] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [8:1] } = { 3'011 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [9] 3'001 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [0] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [0] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [0] }
     Consolidated identical input bits for $mux cell $flatten\top_inst.\U1.\SS_FSM.$ternary$source/sound_series_fsm.sv:30$134:
       Old ports: A=3'011, B=3'100, Y=$auto$wreduce.cc:455:run$1270 [2:0]
       New ports: A=2'01, B=2'10, Y={ $auto$wreduce.cc:455:run$1270 [2] $auto$wreduce.cc:455:run$1270 [0] }
@@ -1687,10 +1680,10 @@ Removed 0 multiplexer ports.
       Old ports: A=4'1000, B=4'0000, Y=$flatten\top_inst.\U1.\SS_FSM.$ternary$source/sound_series_fsm.sv:35$139_Y
       New ports: A=1'1, B=1'0, Y=$flatten\top_inst.\U1.\SS_FSM.$ternary$source/sound_series_fsm.sv:35$139_Y [3]
       New connections: $flatten\top_inst.\U1.\SS_FSM.$ternary$source/sound_series_fsm.sv:35$139_Y [2:0] = 3'000
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][2]$1525:
-      Old ports: A=16'1000111000110100, B=16'1000011000111010, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1511
-      New ports: A=2'10, B=2'01, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1511 [2:1]
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1511 [15:3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1511 [0] } = { 4'1000 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1511 [2] 7'1100011 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1511 [1] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][3][2]$1521:
+      Old ports: A=16'1000111000110100, B=16'1000011000111010, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1507
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1507 [2:1]
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1507 [15:3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1507 [0] } = { 4'1000 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1507 [2] 7'1100011 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1507 [1] 1'0 }
     Consolidated identical input bits for $mux cell $flatten\top_inst.\U1.\mode_FSM.$ternary$source/mode_fsm.sv:20$88:
       Old ports: A=2'01, B=2'11, Y=$flatten\top_inst.\U1.\mode_FSM.$ternary$source/mode_fsm.sv:20$88_Y
       New ports: A=1'0, B=1'1, Y=$flatten\top_inst.\U1.\mode_FSM.$ternary$source/mode_fsm.sv:20$88_Y [1]
@@ -1716,34 +1709,34 @@ Removed 0 multiplexer ports.
       New ports: A=2'10, B=2'01, Y={ $flatten\uart_inst.\uart_tx_inst.$procmux$699_Y [5] $flatten\uart_inst.\uart_tx_inst.$procmux$699_Y [0] }
       New connections: { $flatten\uart_inst.\uart_tx_inst.$procmux$699_Y [18:6] $flatten\uart_inst.\uart_tx_inst.$procmux$699_Y [4:1] } = { 13'0000000000000 $flatten\uart_inst.\uart_tx_inst.$procmux$699_Y [0] $flatten\uart_inst.\uart_tx_inst.$procmux$699_Y [0] $flatten\uart_inst.\uart_tx_inst.$procmux$699_Y [0] $flatten\uart_inst.\uart_tx_inst.$procmux$699_Y [0] }
   Optimizing cells in module \ice40hx8k.
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$1516:
-      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517, B=16'0000000000000001, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506
-      New ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1517 [2], B=1'0, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2]
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [15:3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [1:0] } = { 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] 3'001 }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$1513:
-      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514, B=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505
-      New ports: A={ 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [0] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [0] }, B={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [2] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1515 [2] 2'10 }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [10:9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [6:5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [2:0] }
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [15:14] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [12:11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [8:7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [4:3] } = { 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [9] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [0] 1'1 }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$1510:
-      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1511, B=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503
-      New ports: A={ 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1511 [2] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1511 [2:1] 1'0 }, B={ 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [5] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [0] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1512 [0] }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [15] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [2:0] }
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [14:12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [10:8] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [4:3] } = { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [7] 2'11 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [0] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [1] }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$1507:
-      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508, B=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502
-      New ports: A={ 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [5] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [5:4] 3'100 }, B={ 3'011 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [1] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [1] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1509 [1:0] }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [5:4] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [2:0] }
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [15:14] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [12:10] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [8] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [3] } = { 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [4] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [2] 2'01 }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$1468:
-      Old ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1469, B=4'1111, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1460
-      New ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1469 [0], B=1'1, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1460 [0]
-      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1460 [3:1] = { 2'11 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1460 [0] }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$1465:
-      Old ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1466, B=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1467, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1458
-      New ports: A={ 2'01 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1466 [1] }, B={ 2'10 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1467 [1] }, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1458 [3:1]
-      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1458 [0] = 1'1
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$1462:
-      Old ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1463, B=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1464, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$a$1457
-      New ports: A={ $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1463 [0] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1463 [0] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1463 [0] }, B={ $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1464 [2:1] 1'0 }, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$a$1457 [2:0]
-      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$a$1457 [3] = $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$a$1457 [0]
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$1512:
+      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513, B=16'0000000000000001, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502
+      New ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][3]$a$1513 [2], B=1'0, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2]
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [15:3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [1:0] } = { 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] 3'001 }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$1509:
+      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510, B=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501
+      New ports: A={ 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [0] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [0] }, B={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [2] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$b$1511 [2] 2'10 }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [10:9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [6:5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [2:0] }
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [15:14] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [12:11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [8:7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [4:3] } = { 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [9] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [0] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$1506:
+      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1507, B=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499
+      New ports: A={ 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1507 [2] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$a$1507 [2:1] 1'0 }, B={ 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [5] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [0] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$b$1508 [0] }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [15] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [2:0] }
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [14:12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [10:8] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [4:3] } = { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [7] 2'11 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [0] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$1503:
+      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504, B=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498
+      New ports: A={ 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [5] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [5:4] 3'100 }, B={ 3'011 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [1] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [1] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$b$1505 [1:0] }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [5:4] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [2:0] }
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [15:14] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [12:10] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [8] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [3] } = { 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [4] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [2] 2'01 }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$1464:
+      Old ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1465, B=4'1111, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1456
+      New ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][2]$a$1465 [0], B=1'1, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1456 [0]
+      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1456 [3:1] = { 2'11 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1456 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$1461:
+      Old ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1462, B=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1463, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1454
+      New ports: A={ 2'01 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1462 [1] }, B={ 2'10 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$b$1463 [1] }, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1454 [3:1]
+      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1454 [0] = 1'1
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$1458:
+      Old ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1459, B=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1460, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$a$1453
+      New ports: A={ $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1459 [0] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1459 [0] $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$a$1459 [0] }, B={ $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][0]$b$1460 [2:1] 1'0 }, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$a$1453 [2:0]
+      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$a$1453 [3] = $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$a$1453 [0]
     Consolidated identical input bits for $mux cell $flatten\top_inst.\U1.\seq_div.$procmux$960:
       Old ports: A={ \top_inst.U1.seq_div.dividend 8'00000000 }, B=$flatten\top_inst.\U1.\seq_div.$3\next_r[23:0], Y=\top_inst.U1.seq_div.next_r
       New ports: A={ \top_inst.U1.seq_div.dividend 7'0000000 }, B={ $flatten\top_inst.\U1.\seq_div.$3\next_r[23:0] [23:8] \top_inst.U1.seq_div.R [6:0] }, Y=\top_inst.U1.seq_div.next_r [23:1]
@@ -1753,18 +1746,18 @@ Removed 0 multiplexer ports.
       New ports: A={ $flatten\uart_inst.\uart_tx_inst.$procmux$699_Y [5] $flatten\uart_inst.\uart_tx_inst.$procmux$699_Y [0] }, B=2'01, Y={ $flatten\uart_inst.\uart_tx_inst.$procmux$704_Y [5] $flatten\uart_inst.\uart_tx_inst.$procmux$704_Y [0] }
       New connections: { $flatten\uart_inst.\uart_tx_inst.$procmux$704_Y [18:6] $flatten\uart_inst.\uart_tx_inst.$procmux$704_Y [4:1] } = { 13'0000000000000 $flatten\uart_inst.\uart_tx_inst.$procmux$704_Y [0] $flatten\uart_inst.\uart_tx_inst.$procmux$704_Y [0] $flatten\uart_inst.\uart_tx_inst.$procmux$704_Y [0] $flatten\uart_inst.\uart_tx_inst.$procmux$704_Y [0] }
   Optimizing cells in module \ice40hx8k.
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$1504:
-      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505, B=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$b$1500
-      New ports: A={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [10:9] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [6:5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [0] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [2:0] }, B={ 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1506 [2] 2'01 }, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$b$1500 [13:0]
-      New connections: $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$b$1500 [15:14] = { 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$b$1500 [7] }
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$1501:
-      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502, B=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$a$1499
-      New ports: A={ 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [4] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [5:4] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1502 [2:0] }, B={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [15] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [11] 2'11 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [5] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [1] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [2:0] }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$a$1499 [15:7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$a$1499 [5:0] }
-      New connections: $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$a$1499 [6] = 1'0
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$1459:
-      Old ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1460, B=4'1111, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][0][0]$b$1455
-      New ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1460 [0], B=1'1, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][0][0]$b$1455 [0]
-      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][0][0]$b$1455 [3:1] = { 2'11 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][0][0]$b$1455 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$1500:
+      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501, B=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$b$1496
+      New ports: A={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [6] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [10:9] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [6:5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [0] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [2:0] }, B={ 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] 2'00 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$b$1502 [2] 2'01 }, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$b$1496 [13:0]
+      New connections: $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$b$1496 [15:14] = { 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$b$1496 [7] }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$1497:
+      Old ports: A=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498, B=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499, Y=$memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$a$1495
+      New ports: A={ 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [4] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [9] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [5:4] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$a$1498 [2:0] }, B={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [15] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [11] 2'11 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [0] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [5] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [1] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [2:0] }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$a$1495 [15:7] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$a$1495 [5:0] }
+      New connections: $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][0][0]$a$1495 [6] = 1'0
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$1455:
+      Old ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1456, B=4'1111, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][0][0]$b$1451
+      New ports: A=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][1]$a$1456 [0], B=1'1, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][0][0]$b$1451 [0]
+      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][0][0]$b$1451 [3:1] = { 2'11 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][0][0]$b$1451 [0] }
   Optimizing cells in module \ice40hx8k.
 Performed a total of 33 changes.
 
@@ -1795,18 +1788,18 @@ Removed 0 multiplexer ports.
 
 17.29.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \ice40hx8k.
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$1465:
-      Old ports: A={ 2'01 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1466 [1] }, B={ 2'10 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1466 [1] }, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1458 [3:1]
-      New ports: A=2'01, B=2'10, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1458 [3:2]
-      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1458 [1] = $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1466 [1]
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$1510:
-      Old ports: A={ 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [12] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [12:11] 1'0 }, B={ 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [12] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [12:11] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [11] }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [15] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [14] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [8] }
-      New ports: A={ 3'101 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [12:11] 1'0 }, B={ 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [12:11] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [11] }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [15:14] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [8] }
-      New connections: $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1503 [11] = $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1508 [12]
-    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$1513:
-      Old ports: A={ 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] }, B={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] 2'10 }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [10] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [2:1] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [4] }
-      New ports: A={ 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] }, B={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [11] 2'10 }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [10] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [1] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [4] }
-      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1505 [2] } = { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1514 [12] }
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$1461:
+      Old ports: A={ 2'01 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1462 [1] }, B={ 2'10 $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1462 [1] }, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1454 [3:1]
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1454 [3:2]
+      New connections: $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][1][0]$b$1454 [1] = $memory$flatten\top_inst.\U1.\SS_FSM.$auto$proc_rom.cc:150:do_switch$627$rdmux[0][2][1]$a$1462 [1]
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][1]$1506:
+      Old ports: A={ 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [12] 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [12:11] 1'0 }, B={ 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [12] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [12:11] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [11] }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [15] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [14] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [8] }
+      New ports: A={ 3'101 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [12:11] 1'0 }, B={ 2'01 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [12:11] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [11] }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [15:14] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [2] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [3] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [8] }
+      New connections: $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][0]$b$1499 [11] = $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][0]$a$1504 [12]
+    Consolidated identical input bits for $mux cell $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$1509:
+      Old ports: A={ 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] }, B={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] 2'10 }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [10] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [2:1] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [4] }
+      New ports: A={ 2'10 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] 1'0 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] }, B={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] 1'1 $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [11] 2'10 }, Y={ $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [13] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [10] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [12] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [5] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [1] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [4] }
+      New connections: { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][1][1]$a$1501 [2] } = { $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [11] $memory$flatten\top_inst.\U1.\frqdiv.$auto$proc_rom.cc:150:do_switch$631$rdmux[0][2][2]$a$1510 [12] }
   Optimizing cells in module \ice40hx8k.
 Performed a total of 3 changes.
 
@@ -1815,7 +1808,7 @@ Finding identical cells in module `\ice40hx8k'.
 Removed a total of 0 cells.
 
 17.29.13. Executing OPT_DFF pass (perform DFF optimizations).
-Adding SRST signal on $auto$ff.cc:266:slice$1221 ($dffe) from module ice40hx8k (D = $flatten\uart_inst.\uart_tx_inst.$sub$ice40/uart/uart_tx.v:88$608_Y [18:6], Q = \uart_inst.uart_tx_inst.prescale_reg [18:6], rval = 13'0000000000000).
+Adding SRST signal on $auto$ff.cc:266:slice$1221 ($dffe) from module ice40hx8k (D = $auto$wreduce.cc:455:run$1278 [18:6], Q = \uart_inst.uart_tx_inst.prescale_reg [18:6], rval = 13'0000000000000).
 Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1258 ($adffe) from module ice40hx8k.
 
 17.29.14. Executing OPT_CLEAN pass (remove unused cells and wires).
@@ -1876,7 +1869,7 @@ Finding identical cells in module `\ice40hx8k'.
 Removed a total of 0 cells.
 
 17.29.27. Executing OPT_DFF pass (perform DFF optimizations).
-Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1545 ($adffe) from module ice40hx8k.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1541 ($adffe) from module ice40hx8k.
 
 17.29.28. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
@@ -1934,7 +1927,7 @@ Finding identical cells in module `\ice40hx8k'.
 Removed a total of 0 cells.
 
 17.29.41. Executing OPT_DFF pass (perform DFF optimizations).
-Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1546 ($adffe) from module ice40hx8k.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1542 ($adffe) from module ice40hx8k.
 
 17.29.42. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
@@ -1992,7 +1985,7 @@ Finding identical cells in module `\ice40hx8k'.
 Removed a total of 0 cells.
 
 17.29.55. Executing OPT_DFF pass (perform DFF optimizations).
-Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1547 ($adffe) from module ice40hx8k.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1543 ($adffe) from module ice40hx8k.
 
 17.29.56. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
@@ -2050,7 +2043,7 @@ Finding identical cells in module `\ice40hx8k'.
 Removed a total of 0 cells.
 
 17.29.69. Executing OPT_DFF pass (perform DFF optimizations).
-Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1548 ($adffe) from module ice40hx8k.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1544 ($adffe) from module ice40hx8k.
 
 17.29.70. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
@@ -2108,7 +2101,7 @@ Finding identical cells in module `\ice40hx8k'.
 Removed a total of 0 cells.
 
 17.29.83. Executing OPT_DFF pass (perform DFF optimizations).
-Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1549 ($adffe) from module ice40hx8k.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1545 ($adffe) from module ice40hx8k.
 
 17.29.84. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
@@ -2166,7 +2159,7 @@ Finding identical cells in module `\ice40hx8k'.
 Removed a total of 0 cells.
 
 17.29.97. Executing OPT_DFF pass (perform DFF optimizations).
-Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1550 ($adffe) from module ice40hx8k.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1546 ($adffe) from module ice40hx8k.
 
 17.29.98. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
@@ -2224,7 +2217,7 @@ Finding identical cells in module `\ice40hx8k'.
 Removed a total of 0 cells.
 
 17.29.111. Executing OPT_DFF pass (perform DFF optimizations).
-Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1551 ($adffe) from module ice40hx8k.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1547 ($adffe) from module ice40hx8k.
 
 17.29.112. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
@@ -2336,8 +2329,8 @@ Using extmapper simplemap for cells of type $logic_not.
 Using template $paramod$3826c06832e910ed7e3a5e37dc9a6adea7917f5a\_80_ice40_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $eq.
 Using extmapper simplemap for cells of type $reduce_or.
-Using extmapper simplemap for cells of type $reduce_and.
 Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_and.
 Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $or.
 Using template $paramod$20b1d0597707d55efcb9664e40f63985956d7680\_80_ice40_alu for cells of type $alu.
@@ -2351,7 +2344,7 @@ Using template $paramod$4d45682f6d5f8751d24fc75184ef72226da353f7\_90_pmux for ce
 Using extmapper simplemap for cells of type $logic_or.
 Using extmapper simplemap for cells of type $logic_and.
 Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_80_ice40_alu for cells of type $alu.
-Using template $paramod$5fb3cea3e36078ed44b85aadf768a6588af6651e\_80_ice40_alu for cells of type $alu.
+Using template $paramod$93b49458bab1c00eb32aff458c583f46ff61e60f\_80_ice40_alu for cells of type $alu.
 Using template $paramod$2af30114e9bd4ccb04dad757b3f0a8f6bf0615b0\_80_ice40_alu for cells of type $alu.
 Using template $paramod$521ce43182eecb9f60c72393a788160d2c356bf5\_90_pmux for cells of type $pmux.
 Using template $paramod$645fe0cc96ae5edb83bff90cc2c78f4a20ca3e3c\_90_pmux for cells of type $pmux.
@@ -2360,76 +2353,45 @@ Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1\_80_ice40_alu f
 Using template $paramod$97565c3687be688407d1272a293bd9d0ae6852dc\_90_pmux for cells of type $pmux.
 Using template $paramod$c8f9642fe0e0f4527ea400b1bd678c474f53d556\_80_ice40_alu for cells of type $alu.
 Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_80_ice40_alu for cells of type $alu.
-Using template $paramod$constmap:0926405b5b54609f48e76b9324b4f8bf7b09d41e$paramod$b5c0c851c47cd60343f9cd29f600668ee4a8a3fb\_90_shift_shiftx for cells of type $shift.
-Using template $paramod$93b49458bab1c00eb32aff458c583f46ff61e60f\_80_ice40_alu for cells of type $alu.
-Using extmapper simplemap for cells of type $xor.
 Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $xor.
 Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000001 for cells of type $lcu.
 No more expansions possible.
-<suppressed ~1100 debug messages>
+<suppressed ~790 debug messages>
 
 17.32. Executing OPT pass (performing simple optimizations).
 
 17.32.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module ice40hx8k.
-<suppressed ~1124 debug messages>
+<suppressed ~787 debug messages>
 
 17.32.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ice40hx8k'.
-<suppressed ~558 debug messages>
-Removed a total of 186 cells.
+<suppressed ~546 debug messages>
+Removed a total of 182 cells.
 
 17.32.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 17.32.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
-Removed 98 unused cells and 635 unused wires.
-<suppressed ~99 debug messages>
+Removed 74 unused cells and 584 unused wires.
+<suppressed ~75 debug messages>
 
 17.32.5. Finished fast OPT passes.
 
 17.33. Executing ICE40_OPT pass (performing simple optimizations).
 
 17.33.1. Running ICE40 specific optimizations.
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1289.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1289.BB [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1321.slice[0].carry: CO=\top_inst.U1.pwm.count [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.BB [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[10].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [10]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[11].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [11]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[12].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [12]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[13].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [13]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[14].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [14]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[15].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [15]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[16].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [16]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[17].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [17]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[18].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [18]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[19].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [19]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[20].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [20]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[21].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [21]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[22].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [22]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[23].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [23]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[24].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [24]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[25].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [25]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[26].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [26]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[27].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [27]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[28].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [28]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[29].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [29]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[30].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [30]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[31].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [31]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[4].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [4]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[5].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [5]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[6].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [6]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [7]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[8].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [8]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[9].carry: CO=$auto$alumacc.cc:485:replace_alu$1347.C [9]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1350.slice[0].carry: CO=\top_inst.U1.clk8.count [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1353.slice[0].carry: CO=\top_inst.U1.clk_div.count [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1356.slice[0].carry: CO=\top_inst.U1.osc.count [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1359.slice[0].carry: CO=\top_inst.U1.pwm.count [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1362.slice[0].carry: CO=\top_inst.U1.seq_div.count_div [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1365.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1365.BB [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1371.slice[0].carry: CO=\uart_inst.uart_tx_inst.bit_cnt [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1374.slice[0].carry: CO=\uart_inst.uart_tx_inst.prescale_reg [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1288.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1288.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1320.slice[0].carry: CO=\top_inst.U1.pwm.count [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1346.slice[0].carry: CO=\top_inst.U1.clk8.count [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1349.slice[0].carry: CO=\top_inst.U1.clk_div.count [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1352.slice[0].carry: CO=\top_inst.U1.osc.count [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1355.slice[0].carry: CO=\top_inst.U1.pwm.count [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1358.slice[0].carry: CO=\top_inst.U1.seq_div.count_div [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1361.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1361.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1367.slice[0].carry: CO=\uart_inst.uart_tx_inst.bit_cnt [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ice40hx8k.$auto$alumacc.cc:485:replace_alu$1370.slice[0].carry: CO=\uart_inst.uart_tx_inst.prescale_reg [0]
 
 17.33.2. Executing OPT_EXPR pass (perform const folding).
 Optimizing module ice40hx8k.
@@ -2437,14 +2399,13 @@ Optimizing module ice40hx8k.
 
 17.33.3. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ice40hx8k'.
-<suppressed ~156 debug messages>
-Removed a total of 52 cells.
+Removed a total of 0 cells.
 
 17.33.4. Executing OPT_DFF pass (perform DFF optimizations).
 
 17.33.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
-Removed 2 unused cells and 28 unused wires.
+Removed 2 unused cells and 2 unused wires.
 <suppressed ~3 debug messages>
 
 17.33.6. Rerunning OPT passes. (Removed registers in this run.)
@@ -2453,7 +2414,6 @@ Removed 2 unused cells and 28 unused wires.
 
 17.33.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module ice40hx8k.
-<suppressed ~28 debug messages>
 
 17.33.9. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ice40hx8k'.
@@ -2463,26 +2423,8 @@ Removed a total of 0 cells.
 
 17.33.11. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
-Removed 0 unused cells and 27 unused wires.
-<suppressed ~1 debug messages>
 
-17.33.12. Rerunning OPT passes. (Removed registers in this run.)
-
-17.33.13. Running ICE40 specific optimizations.
-
-17.33.14. Executing OPT_EXPR pass (perform const folding).
-Optimizing module ice40hx8k.
-
-17.33.15. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\ice40hx8k'.
-Removed a total of 0 cells.
-
-17.33.16. Executing OPT_DFF pass (perform DFF optimizations).
-
-17.33.17. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \ice40hx8k..
-
-17.33.18. Finished OPT passes. (There is nothing left to do.)
+17.33.12. Finished OPT passes. (There is nothing left to do.)
 
 17.34. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
 
@@ -2513,10 +2455,10 @@ Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
 Successfully finished Verilog frontend.
 
 17.35.2. Continuing TECHMAP pass.
+Using template \$_DFFE_PP_ for cells of type $_DFFE_PP_.
 Using template \$_DFF_PP0_ for cells of type $_DFF_PP0_.
 Using template \$_DFFE_PP0P_ for cells of type $_DFFE_PP0P_.
 Using template \$_DFF_PP1_ for cells of type $_DFF_PP1_.
-Using template \$_DFFE_PP_ for cells of type $_DFFE_PP_.
 Using template \$_SDFFCE_PP0P_ for cells of type $_SDFFCE_PP0P_.
 Using template \$_SDFFCE_PP1P_ for cells of type $_SDFFCE_PP1P_.
 No more expansions possible.
@@ -2526,16 +2468,14 @@ No more expansions possible.
 Optimizing module ice40hx8k.
 
 17.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
-Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[0].carry ($lut).
-Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1347.slice[10].carry ($lut).
-Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1350.slice[0].carry ($lut).
-Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1353.slice[0].carry ($lut).
-Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1356.slice[0].carry ($lut).
-Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1359.slice[0].carry ($lut).
-Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1362.slice[0].carry ($lut).
-Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1365.slice[0].carry ($lut).
-Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1371.slice[0].carry ($lut).
-Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1374.slice[0].carry ($lut).
+Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1346.slice[0].carry ($lut).
+Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1349.slice[0].carry ($lut).
+Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1352.slice[0].carry ($lut).
+Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1355.slice[0].carry ($lut).
+Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1358.slice[0].carry ($lut).
+Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1361.slice[0].carry ($lut).
+Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1367.slice[0].carry ($lut).
+Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1370.slice[0].carry ($lut).
 
 17.38. Executing ICE40_OPT pass (performing simple optimizations).
 
@@ -2543,18 +2483,18 @@ Mapping ice40hx8k.$auto$alumacc.cc:485:replace_alu$1374.slice[0].carry ($lut).
 
 17.38.2. Executing OPT_EXPR pass (perform const folding).
 Optimizing module ice40hx8k.
-<suppressed ~241 debug messages>
+<suppressed ~181 debug messages>
 
 17.38.3. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ice40hx8k'.
-<suppressed ~126 debug messages>
-Removed a total of 42 cells.
+<suppressed ~123 debug messages>
+Removed a total of 41 cells.
 
 17.38.4. Executing OPT_DFF pass (perform DFF optimizations).
 
 17.38.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ice40hx8k..
-Removed 0 unused cells and 1140 unused wires.
+Removed 0 unused cells and 1131 unused wires.
 <suppressed ~1 debug messages>
 
 17.38.6. Rerunning OPT passes. (Removed registers in this run.)
@@ -2590,7 +2530,7 @@ No more expansions possible.
 17.40. Executing ABC pass (technology mapping using ABC).
 
 17.40.1. Extracting gate netlist of module `\ice40hx8k' to `<abc-temp-dir>/input.blif'..
-Extracted 801 gates and 1052 wires to a netlist network with 249 inputs and 215 outputs.
+Extracted 757 gates and 1004 wires to a netlist network with 245 inputs and 198 outputs.
 
 17.40.1.1. Executing ABC.
 Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
@@ -2612,20 +2552,20 @@ ABC: + if
 ABC: + mfs2 
 ABC: + lutpack -S 1 
 ABC: + dress <abc-temp-dir>/input.blif 
-ABC: Total number of equiv classes                =     249.
-ABC: Participating nodes from both networks       =     596.
-ABC: Participating nodes from the first network   =     266. (  76.00 % of nodes)
-ABC: Participating nodes from the second network  =     330. (  94.29 % of nodes)
-ABC: Node pairs (any polarity)                    =     266. (  76.00 % of names can be moved)
-ABC: Node pairs (same polarity)                   =     246. (  70.29 % of names can be moved)
-ABC: Total runtime =     0.10 sec
+ABC: Total number of equiv classes                =     232.
+ABC: Participating nodes from both networks       =     547.
+ABC: Participating nodes from the first network   =     249. (  75.68 % of nodes)
+ABC: Participating nodes from the second network  =     298. (  90.58 % of nodes)
+ABC: Node pairs (any polarity)                    =     249. (  75.68 % of names can be moved)
+ABC: Node pairs (same polarity)                   =     226. (  68.69 % of names can be moved)
+ABC: Total runtime =     0.09 sec
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 17.40.1.2. Re-integrating ABC results.
-ABC RESULTS:              $lut cells:      349
-ABC RESULTS:        internal signals:      588
-ABC RESULTS:           input signals:      249
-ABC RESULTS:          output signals:      215
+ABC RESULTS:              $lut cells:      328
+ABC RESULTS:        internal signals:      561
+ABC RESULTS:           input signals:      245
+ABC RESULTS:          output signals:      198
 Removing temp directory.
 
 17.41. Executing ICE40_WRAPCARRY pass (wrap carries).
@@ -2659,39 +2599,39 @@ Successfully finished Verilog frontend.
 17.42.2. Continuing TECHMAP pass.
 No more expansions possible.
 <suppressed ~22 debug messages>
-Removed 73 unused cells and 736 unused wires.
+Removed 73 unused cells and 718 unused wires.
 
 17.43. Executing OPT_LUT pass (optimize LUTs).
 Discovering LUTs.
-Number of LUTs:      438
+Number of LUTs:      414
   1-LUT               71
-  2-LUT               80
-  3-LUT              161
-  4-LUT              126
-  with \SB_CARRY    (#0)   82
-  with \SB_CARRY    (#1)   84
+  2-LUT               68
+  3-LUT              168
+  4-LUT              107
+  with \SB_CARRY    (#0)   79
+  with \SB_CARRY    (#1)   81
 
 Eliminating LUTs.
-Number of LUTs:      438
+Number of LUTs:      414
   1-LUT               71
-  2-LUT               80
-  3-LUT              161
-  4-LUT              126
-  with \SB_CARRY    (#0)   82
-  with \SB_CARRY    (#1)   84
+  2-LUT               68
+  3-LUT              168
+  4-LUT              107
+  with \SB_CARRY    (#0)   79
+  with \SB_CARRY    (#1)   81
 
 Combining LUTs.
-Number of LUTs:      413
+Number of LUTs:      389
   1-LUT               70
-  2-LUT               54
-  3-LUT              141
-  4-LUT              148
-  with \SB_CARRY    (#0)   82
-  with \SB_CARRY    (#1)   84
+  2-LUT               42
+  3-LUT              148
+  4-LUT              129
+  with \SB_CARRY    (#0)   79
+  with \SB_CARRY    (#1)   81
 
 Eliminated 0 LUTs.
 Combined 25 LUTs.
-<suppressed ~2441 debug messages>
+<suppressed ~2376 debug messages>
 
 17.44. Executing TECHMAP pass (map to technology primitives).
 
@@ -2701,103 +2641,101 @@ Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
 17.44.2. Continuing TECHMAP pass.
-Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
-Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
-Using template $paramod$11ec7271d8e6e5aeaace08c13e4c601f10e31038\$lut for cells of type $lut.
-Using template $paramod$453111cff761ac57957f9972d987be765170f931\$lut for cells of type $lut.
-Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
-Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
-Using template $paramod$451540f0f4d6738aa7ad07d81c5f0cead4cc4a73\$lut for cells of type $lut.
-Using template $paramod$64669a7e87c28e39425dffff48145545533b4971\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod$a59507d273cd827eb6c46c37820d50a1b717efdf\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
-Using template $paramod$cd6c4b4da6d8737b72fd2dc8f5d83d8967445809\$lut for cells of type $lut.
-Using template $paramod$965f8f2fa1a796a6c51222eabb50fbd26e97d98b\$lut for cells of type $lut.
-Using template $paramod$8461cf8f35b1a92a9818e6c8caba55bd0f031348\$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000111 for cells of type $lut.
-Using template $paramod$7d791c2363f4f019348f93a148b2a44b4ba6b5b3\$lut for cells of type $lut.
-Using template $paramod$5280a6fb15b184512b48cc6d199288a0bfdcb7a5\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110000 for cells of type $lut.
-Using template $paramod$b297295e19b03521716155b85537bbe86d6a9ae6\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001011 for cells of type $lut.
-Using template $paramod$a50be0e6fa3a01511bb234559cb74fb8bd3e2061\$lut for cells of type $lut.
-Using template $paramod$06a49eeef9c9c0ca3eeb308c4b5ee09a412d6201\$lut for cells of type $lut.
-Using template $paramod$6382f7860648fdb6f8a8dc690c25a62882cc501b\$lut for cells of type $lut.
-Using template $paramod$41326ad8644342a66dfb051d050f2b6fbf15015b\$lut for cells of type $lut.
-Using template $paramod$c24ed72ebb67e9ead6029e42e909ef7fc0abbb11\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001101 for cells of type $lut.
-Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
-Using template $paramod$415b9dd3a15783ae56c103f189fd8e182f997441\$lut for cells of type $lut.
-Using template $paramod$199d4d00ba7d2595d4687ef8946b58074293d9f0\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01100000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11000101 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10001111 for cells of type $lut.
-Using template $paramod$ad3a97108c9f4d10f8acfa309b668b9455d3d733\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001111 for cells of type $lut.
-Using template $paramod$3dac3077b74f27a9efa822cf00e7ed45fb866074\$lut for cells of type $lut.
-Using template $paramod$12fb017f90e7463fe74789d2ec23494cce2be24a\$lut for cells of type $lut.
-Using template $paramod$56b03bb16189d0df5732f97659a58f26b0c9c41a\$lut for cells of type $lut.
-Using template $paramod$85b779ce5ab505dbf25e5e046fb43ca2b76b878b\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101011 for cells of type $lut.
-Using template $paramod$5a621b016c894274d07edef48c49b401a15fd796\$lut for cells of type $lut.
-Using template $paramod$54dc9aafe6e8a348026d60f9910d7f8d3f4d92e9\$lut for cells of type $lut.
-Using template $paramod$688901ae8bff259b6d6e1f40e9eee2d362da7922\$lut for cells of type $lut.
-Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
-Using template $paramod$be10d0a69292c54616c3e710ac293a09428f6a8b\$lut for cells of type $lut.
-Using template $paramod$4cf5305612d86489c1a6171729557670bf08582e\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100001 for cells of type $lut.
-Using template $paramod$ed00a508267158198462fdb57667dbc416221b4e\$lut for cells of type $lut.
-Using template $paramod$7614968db5bb082ee538195c00594779836d04ec\$lut for cells of type $lut.
-Using template $paramod$3baa7378a0a5597cc831cdcd7692b74095acd543\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
-Using template $paramod$f6718da5409ec8636fab31113c774a3123f56b0b\$lut for cells of type $lut.
-Using template $paramod$7c0fa5d918a8d4c0225ab4aa53f9d539c6d5bbda\$lut for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
+Using template $paramod$94ac66a11090dca84889e55fcf03297912a5b7ec\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod$cd6c4b4da6d8737b72fd2dc8f5d83d8967445809\$lut for cells of type $lut.
+Using template $paramod$11ec7271d8e6e5aeaace08c13e4c601f10e31038\$lut for cells of type $lut.
+Using template $paramod$965f8f2fa1a796a6c51222eabb50fbd26e97d98b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000111 for cells of type $lut.
+Using template $paramod$f472ae5cd0130971a723ca253c1f6cd1b638508c\$lut for cells of type $lut.
+Using template $paramod$43779580bfffd5d5a9f321249a174febf1dac288\$lut for cells of type $lut.
+Using template $paramod$9f135fba3de3ba24cef5852dbc0be35267668f2e\$lut for cells of type $lut.
+Using template $paramod$b297295e19b03521716155b85537bbe86d6a9ae6\$lut for cells of type $lut.
+Using template $paramod$71d951b20e73043168c1656217d126e617052faa\$lut for cells of type $lut.
+Using template $paramod$a3d9d50a26c80b5c42d9b864ac52f329113a426e\$lut for cells of type $lut.
+Using template $paramod$b4d0f4738a5ce50c7f36c2aa2ecc09cfb874f2b6\$lut for cells of type $lut.
+Using template $paramod$e3b789c2cecaf32a91863a52a81cfa925da3d998\$lut for cells of type $lut.
+Using template $paramod$c24ed72ebb67e9ead6029e42e909ef7fc0abbb11\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10011111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
+Using template $paramod$4cf5305612d86489c1a6171729557670bf08582e\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010000 for cells of type $lut.
-Using template $paramod$e8e5609695741cbc3de0a07fbcf5e3ace1c9afc6\$lut for cells of type $lut.
-Using template $paramod$deb4f121bbf3d55ed9a98f692fd112e0918f51b5\$lut for cells of type $lut.
-Using template $paramod$cb807c4e5b3fc400512485c285f594d5cbc6ceda\$lut for cells of type $lut.
-Using template $paramod$53ce561f80f32d4298a3beadc88b6c5c78293221\$lut for cells of type $lut.
-Using template $paramod$a59507d273cd827eb6c46c37820d50a1b717efdf\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001101 for cells of type $lut.
+Using template $paramod$80bc945f6d438f16387422ec284dc12b4bb4e68f\$lut for cells of type $lut.
+Using template $paramod$6ad1063397984b2b09aa574378f44b9f2ae1c5b3\$lut for cells of type $lut.
+Using template $paramod$97e449d15b607612c49291044eca4e2c8b59088e\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01100000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10011110 for cells of type $lut.
+Using template $paramod$e126ce1aa34c16002579653e64e6f450de772e6e\$lut for cells of type $lut.
+Using template $paramod$2f5933953e311dffe5861a53a77e08849a1c7767\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10100011 for cells of type $lut.
+Using template $paramod$3baa7378a0a5597cc831cdcd7692b74095acd543\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10111100 for cells of type $lut.
+Using template $paramod$ad498e625474ac4669814135092d9e5967a65c4b\$lut for cells of type $lut.
+Using template $paramod$7df4c08fb0cde7880ba83f9b205aeb94a0e38509\$lut for cells of type $lut.
+Using template $paramod$8e020ada9f82301d4c48e2caec46e68acdfaec5c\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod$54dc9aafe6e8a348026d60f9910d7f8d3f4d92e9\$lut for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
 Using template $paramod$179512a187da069f3b79ef6612a41e494e7d54b6\$lut for cells of type $lut.
-Using template $paramod$e9c77024ca501b890c641f9c0b10e27242db8730\$lut for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
+Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
 Using template $paramod$2d07c1a6c53c7b878509360922c4fa5ebedc3011\$lut for cells of type $lut.
-Using template $paramod$df196ed0a1da5c4a58c5e08a1dac304fd3fccaab\$lut for cells of type $lut.
-Using template $paramod$052ca015f1400ebf950f85d5f181f7a5865c336c\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001011 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010000 for cells of type $lut.
-Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod$ba05b8a1a425003df083aea0e69541f5cbdc68f2\$lut for cells of type $lut.
+Using template $paramod$b4410865e8124402796f9dfbf73ef8d279fdbd08\$lut for cells of type $lut.
+Using template $paramod$59c595af41d4a5cce2d588c3a5f1342749ce7a77\$lut for cells of type $lut.
+Using template $paramod$df196ed0a1da5c4a58c5e08a1dac304fd3fccaab\$lut for cells of type $lut.
 Using template $paramod$e49f6e3576ef1a6d2f58c54414dbb786af8cc869\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110100 for cells of type $lut.
-Using template $paramod$1f7a849ccc24f2ac250381efb96d0abb38a28f29\$lut for cells of type $lut.
-Using template $paramod$fabf1f27adead66f603436aa091302122e430ef0\$lut for cells of type $lut.
-Using template $paramod$c82d7aa204724568255de10e493596086641f722\$lut for cells of type $lut.
-Using template $paramod$fb5ee0bdef1c4e74aaf1fd8efae98b46a2f5e564\$lut for cells of type $lut.
-Using template $paramod$fccccf8bb2add7667329c686feec7546eb9a3ae3\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
-Using template $paramod$d7f4570f04f68175b1fa25c1bac92938027a2c96\$lut for cells of type $lut.
-Using template $paramod$4282def8dbd6df3d1248ad282c629bee684502c2\$lut for cells of type $lut.
 Using template $paramod$9d707d218adbd63b6f9a0c79d7ee037306fb6296\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001110 for cells of type $lut.
-Using template $paramod$97e449d15b607612c49291044eca4e2c8b59088e\$lut for cells of type $lut.
-Using template $paramod$0a94662b0161fc067fc2a1123fd5ac94da2ec1db\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110100 for cells of type $lut.
 Using template $paramod$ae9b8abdb4f811ce37985dd5106af9cd21223954\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00011111 for cells of type $lut.
+Using template $paramod$3dac3077b74f27a9efa822cf00e7ed45fb866074\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110100 for cells of type $lut.
+Using template $paramod$4282def8dbd6df3d1248ad282c629bee684502c2\$lut for cells of type $lut.
+Using template $paramod$53ce561f80f32d4298a3beadc88b6c5c78293221\$lut for cells of type $lut.
+Using template $paramod$fccccf8bb2add7667329c686feec7546eb9a3ae3\$lut for cells of type $lut.
+Using template $paramod$e9c77024ca501b890c641f9c0b10e27242db8730\$lut for cells of type $lut.
+Using template $paramod$d7f4570f04f68175b1fa25c1bac92938027a2c96\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11111000 for cells of type $lut.
+Using template $paramod$0a94662b0161fc067fc2a1123fd5ac94da2ec1db\$lut for cells of type $lut.
+Using template $paramod$199d4d00ba7d2595d4687ef8946b58074293d9f0\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
+Using template $paramod$c2c7fe860c90cfc70af61d39029863cfb8b6f377\$lut for cells of type $lut.
 No more expansions possible.
-<suppressed ~1586 debug messages>
-Removed 0 unused cells and 872 unused wires.
+<suppressed ~1536 debug messages>
+Removed 0 unused cells and 820 unused wires.
 
 17.45. Executing AUTONAME pass.
-Renamed 14906 objects in module ice40hx8k (53 iterations).
-<suppressed ~891 debug messages>
+Renamed 16622 objects in module ice40hx8k (58 iterations).
+<suppressed ~861 debug messages>
 
 17.46. Executing HIERARCHY pass (managing design hierarchy).
 
@@ -2812,22 +2750,22 @@ Removed 0 unused modules.
 
 === ice40hx8k ===
 
-   Number of wires:                271
-   Number of wire bits:           1667
-   Number of public wires:         271
-   Number of public wire bits:    1667
+   Number of wires:                264
+   Number of wire bits:           1559
+   Number of public wires:         264
+   Number of public wire bits:    1559
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                756
-     SB_CARRY                      147
+   Number of cells:                729
+     SB_CARRY                      144
      SB_DFFE                        14
      SB_DFFER                       69
      SB_DFFESR                      15
      SB_DFFESS                       4
      SB_DFFR                        92
      SB_DFFS                         1
-     SB_LUT4                       413
+     SB_LUT4                       389
      SB_PLL40_CORE                   1
 
 17.48. Executing CHECK pass (checking for obvious problems).
@@ -2837,6 +2775,6 @@ Found and reported 0 problems.
 17.49. Executing JSON backend.
 
 Warnings: 80 unique messages, 80 total
-End of script. Logfile hash: 8077c93230, CPU: user 1.34s system 0.02s, MEM: 37.90 MB peak
+End of script. Logfile hash: 18950462be, CPU: user 1.27s system 0.06s, MEM: 37.03 MB peak
 Yosys 0.27 (git sha1 5f88c218b, gcc 11.3.0-1ubuntu1~22.04 -fPIC -O3)
-Time spent: 24% 1x abc (0 sec), 15% 46x opt_expr (0 sec), ...
+Time spent: 24% 1x abc (0 sec), 17% 28x read_verilog (0 sec), ...
