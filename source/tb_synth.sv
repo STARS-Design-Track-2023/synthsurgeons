@@ -122,7 +122,7 @@ module tb_synth ();
   endtask
 
   // DUT Portmap
-  synth_top DUT 
+  synth DUT 
   (
     .clk(tb_clk), 
     .n_rst(tb_nrst), 
@@ -258,7 +258,7 @@ module tb_synth ();
     tb_pb = 15'b00_000_000_000_000_0; // Off
 
     // No Checks
-    #(CLK_PERIOD * 12000000);
+    #(CLK_PERIOD * 12000);
 
     $display("Simulation complete");
     $stop;

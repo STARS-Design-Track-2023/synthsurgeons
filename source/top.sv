@@ -18,22 +18,17 @@ module top
 
 
 
-//logic [3:0] display; 
-//logic [12:0] note;
-synth_top U1 (.keypad_i(pb[14:0]), .en(~pb[18]), .clk(hz12M), .n_rst(~pb[19]), .pwm_o(left[7]), .sound_series(display));
+logic [3:0] display; 
+logic [12:0] note;
+synth U1 (.keypad_i(pb[14:0]), .en(~pb[18]), .clk(hz12M), .n_rst(~pb[19]), .pwm_o(left[7]), .sound_series(display));
 
-/*assign {left[4:0], right[7:0]}=note;
+assign {left[4:0], right[7:0]}=note;
 
 always_comb begin
-  //note[display]=1'b1;
-    //note=0;
-
-  if (keypad_i==1'b1) begin
-    note[pb]=1'b1; end
-  else if (sound_series==1'b1) begin
-    display[sound_series]=1'b1; end
+  note = pb [12:0];
+  note[display] = 1'b1; 
 end
-endmodule*/
+endmodule
  
 
  // Seven Segment decoder

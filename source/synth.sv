@@ -20,7 +20,7 @@
 
 // endmodule
 
-module synth_top (input logic en, input logic [14:0] keypad_i, input logic clk, n_rst, output logic pwm_o, output logic [3:0] sound_series);
+module synth (input logic en, input logic [14:0] keypad_i, input logic clk, n_rst, output logic pwm_o, output logic [3:0] sound_series);
 logic [3:0] keycode;
 logic mode_key, sound_edge;
 keypad_encoder kp_encoder (.clk(clk), .n_rst(n_rst), .pb(keypad_i), .keycode(keycode), .mode_edge(mode_key), .sound_edge(sound_edge));
