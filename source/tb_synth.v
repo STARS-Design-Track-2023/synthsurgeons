@@ -18,20 +18,20 @@ module tb_synth ();
 
   // Declare Test Case Signals
   integer tb_test_case_num;
-  string  tb_test_case_name;
-  int     tb_bit_num;
-  logic   tb_mismatch;
-  logic   tb_check;
+  //string  tb_test_case_name;
+  reg [511:0] test_case_name;
+  reg   tb_mismatch;
+  reg   tb_check;
 
   // Declare DUT Connection Signals
-  logic   tb_clk;
-  logic   tb_nrst;
-  logic   tb_en;
-  logic   [14:0] tb_pb;
-  logic   tb_pwm;
+  reg   tb_clk;
+  reg   tb_nrst;
+  reg   tb_en;
+  reg   [14:0] tb_pb;
+  wire  tb_pwm;
 
   // Declare the Test Bench Signals for Expected Results
-  logic tb_expected_pwm;
+  reg   tb_expected_pwm;
 
   // Clock generation block
   always begin
@@ -86,24 +86,24 @@ module tb_synth ();
 
   // Set input signals to zero before starting with new testcases
   task start_testcase;
-    input string test_case_name;
-  begin
-    // Space test case out from previous test case
-    #(CLK_PERIOD * 3);
+    input reg [511:0] test_case_name;
+    begin
+      // Space test case out from previous test case
+      #(CLK_PERIOD * 3);
 
-    // Set name and number
-    tb_test_case_num  = tb_test_case_num + 1;
-    tb_test_case_name = test_case_name;
+      // Set name and number
+      tb_test_case_num  = tb_test_case_num + 1;
+      tb_test_case_name = test_case_name;
 
-    // Reset and deactivate DUT
-    deactivate_signals();
-    reset_dut();
-  end
+      // Reset and deactivate DUT
+      deactivate_signals();
+      reset_dut();
+    end
   endtask
 
   // Task to cleanly and consistently check DUT output values
   task check_output;
-    input string check_tag;
+    input reg [511:0] check_tag;
   begin
     tb_mismatch = 1'b0;
     tb_check    = 1'b1;
