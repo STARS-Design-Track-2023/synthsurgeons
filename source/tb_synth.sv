@@ -212,7 +212,7 @@ module tb_synth ();
 
 
     // ************************************************************************
-    // Test Case 4: Tri Wave
+    // Test Case 5: Tri Wave
     // ************************************************************************
     // Start Testcase, Task finishes at Negedge
     start_testcase("Tri Wave");
@@ -225,10 +225,10 @@ module tb_synth ();
     #(CLK_PERIOD * 19112);
 
     // ************************************************************************
-    // Test Case 5: Square Wave
+    // Test Case 6: Square Wave
     // ************************************************************************
     // Start Testcase, Task finishes at Negedge
-    start_testcase("Sq Wave");
+    start_testcase("Square Wave");
     
     tb_pb = 15'b01_000_000_000_000_0; // Change Modes
     tb_en = 1'b1;
@@ -245,6 +245,20 @@ module tb_synth ();
 
     // No Checks
     #(CLK_PERIOD * 19112);
+
+    // ************************************************************************
+    // Test Case 7: Sound Generation
+    // ************************************************************************
+    // Start Testcase, Task finishes at Negedge
+    start_testcase("Sound Gen Test");
+    
+    tb_pb = 15'b10_000_000_000_000_0; // Enable Soundgen
+    tb_en = 1'b1;
+    #(CLK_PERIOD);
+    tb_pb = 15'b00_000_000_000_000_0; // Off
+
+    // No Checks
+    #(CLK_PERIOD * 12000000);
 
     $display("Simulation complete");
     $stop;
