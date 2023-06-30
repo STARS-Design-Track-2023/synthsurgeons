@@ -18,9 +18,9 @@ always_comb begin
 
   case(sound)
     off: next_sound = sound_edge ? sound1:off;
-    sound1: next_sound = sound_edge ? off:sound1;
+    sound1: next_sound = sound_edge ? off2:sound1;
     off2: next_sound = sound_edge ? sound2:off2;
-    sound2: next_sound = sound_edge ? off2:sound2;
+    sound2: next_sound = sound_edge ? off:sound2;
     default next_sound = off;
   endcase
 
@@ -67,7 +67,7 @@ assign sound2_data = {
   C, Cs, D, Ds, E, F, Fs, G, Gs, A, As, B, Ch
 };
 
-assign note_out = (s1_on) ? sound1_data[(count<<2) - 1 -: 4] : OFF;
+assign note_out = (s1_on) ? sound1_data[(count<<2) - 1 -: 4] : (s2_on) ? sound2_data[(count << 2) - 1 -: 4] : OFF;
 
 logic [8:0] next_count;
 logic [8:0] count;
@@ -107,9 +107,6 @@ always_comb begin
     end
     else
       next_count = count;
-  end
-  else begin
-    next_count = 9'd13;
   end
 
 end
