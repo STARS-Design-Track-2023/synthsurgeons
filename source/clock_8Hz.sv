@@ -1,14 +1,14 @@
 
-module clock_8Hz(input logic clk, nrst, en, is_FPGA, output logic flag);
+module clock_8Hz(input logic clk, n_rst, en, is_FPGA, output logic flag);
 
 logic [20:0] next_count; // 1.5M needs 21 bits for counting.
 logic [20:0] count;
 logic [20:0] max;
 
-assign max = is_FPGA ? 1500000 : 1250000;
+assign max = is_FPGA ? 21'd1500000 : 21'd1250000;
 
-always_ff @ (posedge clk, negedge nrst) begin 
-if (nrst == 0) begin
+always_ff @ (posedge clk, negedge n_rst) begin 
+if (n_rst == 0) begin
         count <= 21'b0; end
     else begin
         count <= next_count; end

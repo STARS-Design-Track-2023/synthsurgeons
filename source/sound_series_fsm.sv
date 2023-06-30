@@ -18,7 +18,7 @@ always_comb begin
   case(sound)
     off: next_sound = sound_edge ? sound1:off;
     sound1: next_sound = sound_edge ? off:sound1;
-    default next_sound = 0;
+    default next_sound = off;
   endcase
 
   if(sound == sound1)
@@ -39,7 +39,7 @@ logic [1039:0] sound1_data;
 
 assign sound1_data = {
   Ds,  OFF, OFF, OFF, OFF, OFF, OFF, OFF, E,   OFF, OFF, OFF, OFF, OFF, OFF, OFF, Fs,  OFF, OFF, B,   OFF, OFF, As,  OFF, B,   OFF, // 26-Note Line
-  OFF, Fs,  OFF, OFF, Ds,  OFF, B,   OFF, OFF, Cs,  OFF, OFF, Ds,  OFF, C,   OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF,
+  OFF, Fs,  OFF, OFF, Ds,  OFF, B,   OFF, OFF, Cs,  OFF, OFF, Ds,  OFF, Cs,   OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF,
   OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, Ds,  OFF, OFF, OFF, OFF, OFF, OFF, OFF, E,   OFF, OFF, OFF, OFF, OFF, 
   Ds,  E,   Fs,  OFF, OFF, B,   OFF, OFF, Cs,  OFF, B,   OFF, OFF, OFF, OFF, OFF, B,   Cs,  E,   OFF, OFF, Ds,  OFF, OFF, Cs,  OFF,
   B,   OFF, OFF, OFF, Fs,  OFF, Gs,  OFF, OFF, OFF, Cs,  OFF, Cs,  OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, Cs,  Ds,  E,   OFF,
@@ -50,8 +50,7 @@ assign sound1_data = {
   OFF, OFF, G,   OFF, OFF, E,   OFF, OFF, C,   OFF, F,   OFF, OFF, OFF, OFF, OFF, C,   OFF, C,   OFF, OFF, OFF, OFF, OFF, OFF, OFF
 };
 
-assign note_out = (sound == sound1) ? sound1_data[(count<<2)- 1 -: 4] : OFF;
-
+assign note_out = (s1_on) ? sound1_data[(count<<2) - 1 -: 4] : OFF;
 
 logic [8:0] next_count;
 logic [8:0] count;
@@ -64,16 +63,20 @@ always_ff @ (posedge clk, negedge n_rst) begin
 end
 
 always_comb begin
-  if (sound == sound1) begin
-    if (count <= 1)begin
-      next_count = 9'd260;
+  if (s1_on) begin
+    if(clkdiv) begin
+      if (count == 1) begin
+        next_count = 9'd260;
+      end
+      else begin
+        next_count = count - 1; 
+      end
     end
-    else begin
-      next_count = count - 1; 
-    end
+    else
+      next_count = count;
   end
   else begin
-    next_count = 260; 
+    next_count = 9'd260;
   end
 end
 

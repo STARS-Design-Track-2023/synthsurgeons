@@ -122,11 +122,11 @@ module tb_synth ();
   endtask
 
   // DUT Portmap
-  synth_top DUT 
+  synth DUT 
   (
     .clk(tb_clk), 
     .n_rst(tb_nrst), 
-    .en(tb_D),
+    .en(tb_en),
     .keypad_i(tb_pb),
     .pwm_o(tb_pwm)
   );
@@ -182,7 +182,7 @@ module tb_synth ();
     // ************************************************************************
     // Start Testcase, Task finishes at Negedge
     start_testcase("Low C");
-    tb_pb = 15'b000_000_000_000_01;
+    tb_pb = 15'b00_000_000_000_000_1;
     tb_en = 1'b1;
 
     // No Checks
@@ -258,7 +258,7 @@ module tb_synth ();
     tb_pb = 15'b00_000_000_000_000_0; // Off
 
     // No Checks
-    #(CLK_PERIOD * 12000000);
+    #(CLK_PERIOD * 12000);
 
     $display("Simulation complete");
     $stop;

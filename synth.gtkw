@@ -1,0 +1,48 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Thu Jun 29 17:33:49 2023
+[*]
+[dumpfile] "/home/shay/c/ecng047/Documents/projet/synthsurgeons/dump.vcd"
+[dumpfile_mtime] "Thu Jun 29 17:28:58 2023"
+[dumpfile_size] 18795354
+[savefile] "/home/shay/c/ecng047/Documents/projet/synthsurgeons/synth.gtkw"
+[timestart] 1686000000
+[size] 1846 1016
+[pos] -39 -39
+*-30.512293 10277000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_synth.
+[treeopen] tb_synth.DUT.
+[sst_width] 233
+[signals_width] 239
+[sst_expanded] 1
+[sst_vpaned_height] 370
+@420
+[color] 2
+tb_synth.tb_test_case_num
+@28
+[color] 2
+tb_synth.tb_clk
+[color] 2
+tb_synth.tb_nrst
+[color] 2
+tb_synth.tb_en
+@200
+-DUT
+@22
+tb_synth.DUT.keypad_i[14:0]
+tb_synth.DUT.keycode[3:0]
+@23
+tb_synth.DUT.sound_series[3:0]
+@22
+tb_synth.DUT.divider[15:0]
+tb_synth.DUT.count[15:0]
+tb_synth.DUT.quotient[7:0]
+@8022
+tb_synth.DUT.sample[7:0]
+@28
+tb_synth.DUT.pwm_o
+tb_synth.DUT.sample_now
+@200
+-DEBUG
+[pattern_trace] 1
+[pattern_trace] 0

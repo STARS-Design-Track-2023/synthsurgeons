@@ -20,7 +20,7 @@ always_ff @(posedge clk, negedge n_rst) begin : sync
 end
 
 always_comb begin
-casez (sync_out [12:0])
+casez (sync_out[12:0])
     13'b????????????1: keycode = 4'b0000; //C(low)
     13'b???????????10: keycode = 4'b0001; //C#
     13'b??????????100: keycode = 4'b0010; //D
@@ -49,7 +49,7 @@ if (n_rst == 1'b0) begin
     end  
 end
 
-assign mode_edge = sync_out[14] & ~last_mk;
+assign mode_edge = sync_out[13] & ~last_mk;
 
 logic last_sk;
 always_ff @(posedge clk, negedge n_rst) begin : s_detect
@@ -58,11 +58,11 @@ if (n_rst == 1'b0) begin
         last_sk <= 0;
     end
     else begin
-        last_mk <= sync_out[14];
+        last_sk <= sync_out[14];
     end  
 end
 
-assign sound_edge = sync_out[13] & ~last_sk;
+assign sound_edge = sync_out[14] & ~last_sk;
 
 
 endmodule
